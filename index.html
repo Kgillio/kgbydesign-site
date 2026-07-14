@@ -1,7 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KG by Design — Web, Software & Digital Platforms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030814;
+      --bg-2: #050c1b;
+      --text: #f4efe7;
+      --muted: rgba(214, 219, 231, 0.76);
+      --gold: #d4a04f;
+      --gold-2: #f0d08e;
+      --light-border: rgba(243, 245, 249, 0.54);
+      --hero-max: 1760px;
+      --headline: clamp(4.25rem, 8vw, 8.8rem);
+      --pad-x: clamp(22px, 4vw, 64px);
+      --pad-y: clamp(34px, 5vw, 74px);
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { margin: 0; padding: 0; min-height: 100%; }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 76% 22%, rgba(43, 83, 201, 0.15), transparent 0 22%),
+        radial-gradient(circle at 18% 70%, rgba(26, 58, 158, 0.10), transparent 0 26%),
+        linear-gradient(180deg, #020611 0%, #040916 56%, #020510 100%);
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(2, 8, 18, 0.98) 0%, rgba(4, 10, 24, 0.96) 42%, rgba(4, 12, 28, 0.95) 100%);
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
       position: absolute;
       inset: 0;
-      poi
+      pointer-events: none;
+      z-index: -2;
+      opacity: 0.92;
+      background:
+        radial-gradient(circle at 70% 44%, rgba(50, 95, 220, 0.13), transparent 0 18%),
+        radial-gradient(circle at 30% 18%, rgba(255,255,255,0.012), transparent 0 16%),
+        repeating-linear-gradient(90deg, rgba(90, 119, 190, 0.018) 0 1px, transparent 1px 32px);
+    }
+
+    .hero-inner {
+      width: min(var(--hero-max), 100%);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: var(--pad-y) var(--pad-x);
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(560px, 1.08fr);
+      gap: clamp(32px, 3vw, 68px);
+      align-items: center;
+    }
+
+    .copy {
+      max-width: 760px;
+      position: relative;
+      z-index: 2;
+      padding-block: 10px;
+    }
+
+    .eyebrow {
+      margin: 0 0 28px;
+      color: var(--gold);
+      font-size: clamp(0.82rem, 0.95vw, 1rem);
+      line-height: 1.45;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.34em;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 720px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: var(--headline);
+      font-weight: 300;
+      line-height: 0.90;
+      letter-spacing: -0.06em;
+      color: #f5f1ea;
+      text-shadow:
+        0 2px 0 rgba(255,255,255,0.04),
+        0 18px 40px rgba(0,0,0,0.28);
+    }
+
+    .intro {
+      margin: 28px 0 0;
+      max-width: 690px;
+      color: var(--muted);
+      font-size: clamp(1.03rem, 1.34vw, 1.44rem);
+      line-height: 1.58;
+      font-weight: 300;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 196px;
+      height: 54px;
+      padding: 0 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(214, 160, 79, 0.84);
+      background: rgba(8, 15, 33, 0.28);
+      color: var(--gold-2);
+      text-decoration: none;
       text-transform: uppercase;
       font-size: 0.92rem;
       font-weight: 500;
