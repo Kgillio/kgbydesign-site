@@ -2286,11 +2286,10 @@
 .pc-wrap {
   position: relative;
   z-index: 4;
-  width: min(96vw, 1640px);
+  width: min(94vw, 1640px);
   height: calc(var(--pc-active-h) + 72px);
-  padding: 0 36px;
+  padding: 0 54px;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 .pc-wrap::before,
@@ -2302,12 +2301,9 @@
   justify-content: flex-start;
   gap: var(--pc-gap);
   width: max-content;
-  min-width: 0;
-  margin: 0;
-  padding: 28px 0 44px;
-  transform: translate3d(0, 0, 0);
-  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
+  min-width: 100%;
+  padding: 28px 8px 44px;
+  transform: translateX(clamp(-360px, -18vw, -120px));
 }
 
 .pc-card {
@@ -2837,54 +2833,13 @@
   var cards  = Array.prototype.slice.call(document.querySelectorAll('#pcTrack .pc-card'));
   if (!cards.length) return;
 
-  var wrap = document.querySelector('.pc-wrap');
-  var track = document.getElementById('pcTrack');
-  var activeIndex = 4;
-
-  function centerActiveCard(immediate) {
-    if (!wrap || !track || window.innerWidth <= 980) {
-      if (track) track.style.transform = '';
-      return;
-    }
-
-    var activeCard = cards[activeIndex];
-    if (!activeCard) return;
-
-    var wrapWidth = wrap.clientWidth;
-    var cardCenter = activeCard.offsetLeft + (activeCard.offsetWidth / 2);
-    var targetX = (wrapWidth / 2) - cardCenter;
-    var minX = Math.min(0, wrapWidth - track.scrollWidth);
-    targetX = Math.max(minX, Math.min(0, targetX));
-
-    if (immediate) track.style.transition = 'none';
-    track.style.transform = 'translate3d(' + Math.round(targetX) + 'px, 0, 0)';
-
-    if (immediate) {
-      requestAnimationFrame(function() {
-        track.style.transition = '';
-      });
-    }
-  }
-
   window.pcSetActive = function(i) {
-    activeIndex = i;
     cards.forEach(function(c){ c.classList.remove('pc-active'); });
     if (cards[i]) cards[i].classList.add('pc-active');
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        centerActiveCard(false);
-      });
-    });
   };
 
-  // Keep the Safco feature card centered in the page.
+  // Default featured card: Safco pedestal / marketplace card in the middle
   window.pcSetActive(4);
-  window.addEventListener('resize', function() {
-    centerActiveCard(true);
-  }, { passive: true });
-  window.addEventListener('load', function() {
-    centerActiveCard(true);
-  }, { once: true });
 })();
 
 // ── Lightbox ──
