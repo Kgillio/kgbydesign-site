@@ -1069,6 +1069,30 @@
       -webkit-backface-visibility: hidden;
     }
 
+    /* Keep large lower sections from repainting the whole page while scrolling. */
+    #recent-digital-work,
+    #recent-web-designs-frame,
+    #technical-skills-frame {
+      overflow-anchor: none;
+    }
+
+    .pg-carousel-section {
+      contain: layout paint style;
+    }
+
+    .pc-card {
+      contain: layout paint;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .pc-card-img,
+    .pc-card-img img {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .hero-scroll-cue::after,
@@ -2592,7 +2616,7 @@
 
         &lt;div class=&quot;wd-card&quot;&gt;
           &lt;div class=&quot;wd-video-wrap&quot;&gt;
-            &lt;video src=&quot;assets/2026/03/safco-.mp4&quot; muted loop playsinline preload=&quot;metadata&quot; style=&quot;background:linear-gradient(135deg,#23374f 0%,#0f1824 100%);&quot;&gt;&lt;/video&gt;
+            &lt;video src=&quot;assets/2026/03/safco-.mp4&quot; muted loop playsinline preload=&quot;none&quot; style=&quot;background:linear-gradient(135deg,#23374f 0%,#0f1824 100%);&quot;&gt;&lt;/video&gt;
             &lt;div class=&quot;wd-play-badge&quot;&gt;&lt;div class=&quot;wd-play-badge-inner&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M8 6l9 6-9 6V6z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;/div&gt;
           &lt;/div&gt;
           &lt;div class=&quot;wd-card-body&quot;&gt;
@@ -2605,7 +2629,7 @@
 
         &lt;div class=&quot;wd-card&quot;&gt;
           &lt;div class=&quot;wd-video-wrap&quot;&gt;
-            &lt;video src=&quot;assets/2026/03/rogers.mp4&quot; muted loop playsinline preload=&quot;metadata&quot; style=&quot;background:linear-gradient(135deg,#10224b 0%,#0f162a 100%);&quot;&gt;&lt;/video&gt;
+            &lt;video src=&quot;assets/2026/03/rogers.mp4&quot; muted loop playsinline preload=&quot;none&quot; style=&quot;background:linear-gradient(135deg,#10224b 0%,#0f162a 100%);&quot;&gt;&lt;/video&gt;
             &lt;div class=&quot;wd-play-badge&quot;&gt;&lt;div class=&quot;wd-play-badge-inner&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M8 6l9 6-9 6V6z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;/div&gt;
           &lt;/div&gt;
           &lt;div class=&quot;wd-card-body&quot;&gt;
@@ -2618,7 +2642,7 @@
 
         &lt;div class=&quot;wd-card&quot;&gt;
           &lt;div class=&quot;wd-video-wrap&quot;&gt;
-            &lt;video src=&quot;assets/2026/03/ACME.mp4&quot; muted loop playsinline preload=&quot;metadata&quot; style=&quot;background:linear-gradient(135deg,#24456d 0%,#0f1d31 100%);&quot;&gt;&lt;/video&gt;
+            &lt;video src=&quot;assets/2026/03/ACME.mp4&quot; muted loop playsinline preload=&quot;none&quot; style=&quot;background:linear-gradient(135deg,#24456d 0%,#0f1d31 100%);&quot;&gt;&lt;/video&gt;
             &lt;div class=&quot;wd-play-badge&quot;&gt;&lt;div class=&quot;wd-play-badge-inner&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M8 6l9 6-9 6V6z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;/div&gt;
           &lt;/div&gt;
           &lt;div class=&quot;wd-card-body&quot;&gt;
@@ -2631,7 +2655,7 @@
 
         &lt;div class=&quot;wd-card&quot;&gt;
           &lt;div class=&quot;wd-video-wrap&quot;&gt;
-            &lt;video src=&quot;assets/2026/03/tattoo.mp4&quot; muted loop playsinline preload=&quot;metadata&quot; style=&quot;background:linear-gradient(135deg,#151515 0%,#090909 100%);&quot;&gt;&lt;/video&gt;
+            &lt;video src=&quot;assets/2026/03/tattoo.mp4&quot; muted loop playsinline preload=&quot;none&quot; style=&quot;background:linear-gradient(135deg,#151515 0%,#090909 100%);&quot;&gt;&lt;/video&gt;
             &lt;div class=&quot;wd-play-badge&quot;&gt;&lt;div class=&quot;wd-play-badge-inner&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M8 6l9 6-9 6V6z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;/div&gt;
           &lt;/div&gt;
           &lt;div class=&quot;wd-card-body&quot;&gt;
@@ -2644,7 +2668,7 @@
 
         &lt;div class=&quot;wd-card&quot;&gt;
           &lt;div class=&quot;wd-video-wrap&quot;&gt;
-            &lt;video src=&quot;assets/2026/03/newest-of-the-products.mp4&quot; muted loop playsinline preload=&quot;metadata&quot; style=&quot;background:linear-gradient(135deg,#24456d 0%,#1a273d 100%);&quot;&gt;&lt;/video&gt;
+            &lt;video src=&quot;assets/2026/03/newest-of-the-products.mp4&quot; muted loop playsinline preload=&quot;none&quot; style=&quot;background:linear-gradient(135deg,#24456d 0%,#1a273d 100%);&quot;&gt;&lt;/video&gt;
             &lt;div class=&quot;wd-play-badge&quot;&gt;&lt;div class=&quot;wd-play-badge-inner&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M8 6l9 6-9 6V6z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;/div&gt;
           &lt;/div&gt;
           &lt;div class=&quot;wd-card-body&quot;&gt;
@@ -2657,7 +2681,7 @@
 
         &lt;div class=&quot;wd-card&quot;&gt;
           &lt;div class=&quot;wd-video-wrap&quot;&gt;
-            &lt;video src=&quot;assets/2026/03/scholastic.mp4&quot; muted loop playsinline preload=&quot;metadata&quot; style=&quot;background:linear-gradient(135deg,#8f1e2a 0%,#3c1522 100%);&quot;&gt;&lt;/video&gt;
+            &lt;video src=&quot;assets/2026/03/scholastic.mp4&quot; muted loop playsinline preload=&quot;none&quot; style=&quot;background:linear-gradient(135deg,#8f1e2a 0%,#3c1522 100%);&quot;&gt;&lt;/video&gt;
             &lt;div class=&quot;wd-play-badge&quot;&gt;&lt;div class=&quot;wd-play-badge-inner&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M8 6l9 6-9 6V6z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;/div&gt;
           &lt;/div&gt;
           &lt;div class=&quot;wd-card-body&quot;&gt;
@@ -2686,9 +2710,9 @@
 &lt;script&gt;
 
 (function () {
-  var videos = document.querySelectorAll(&#x27;.wd-video-wrap video&#x27;);
+  var videos = Array.prototype.slice.call(document.querySelectorAll(&#x27;.wd-video-wrap video&#x27;));
 
-  function primeVideoThumbnail(video) {
+  function primeVideo(video) {
     if (!video || video.dataset.kgThumbPrimed === &#x27;1&#x27;) return;
     video.dataset.kgThumbPrimed = &#x27;1&#x27;;
     video.preload = &#x27;metadata&#x27;;
@@ -2701,26 +2725,32 @@
     }, { once: true });
   }
 
+  // Prime one video at a time only while the browser is idle.
+  function queuePrime(index) {
+    if (index &gt;= videos.length) return;
+    var run = function () {
+      primeVideo(videos[index]);
+      setTimeout(function () { queuePrime(index + 1); }, 350);
+    };
+
+    if (&#x27;requestIdleCallback&#x27; in window) {
+      requestIdleCallback(run, { timeout: 1800 });
+    } else {
+      setTimeout(run, 700);
+    }
+  }
+
+  window.addEventListener(&#x27;load&#x27;, function () {
+    setTimeout(function () { queuePrime(0); }, 900);
+  }, { once: true });
+
   videos.forEach(function (video) {
     var wrap = video.closest(&#x27;.wd-video-wrap&#x27;) || video.parentElement;
-
-    if (&#x27;IntersectionObserver&#x27; in window) {
-      var observer = new IntersectionObserver(function (entries, currentObserver) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            primeVideoThumbnail(video);
-            currentObserver.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: &#x27;500px 0px&#x27; });
-      observer.observe(wrap);
-    } else {
-      primeVideoThumbnail(video);
-    }
-
     var badge = wrap.querySelector(&#x27;.wd-play-badge&#x27;);
+
     if (badge) {
       badge.addEventListener(&#x27;click&#x27;, function () {
+        primeVideo(video);
         wrap.classList.add(&#x27;playing&#x27;);
         try { if (video.currentTime &lt; 0.1) video.currentTime = 0; } catch (error) {}
         video.play().catch(function () {
@@ -2747,32 +2777,42 @@
 
 &lt;script id=&quot;kg-web-designs-frame-resizer&quot;&gt;
 (function () {
+  var resizeTimer = 0;
+
   function resizeFrame() {
     if (!window.frameElement) return;
     var section = document.querySelector(&#x27;.wd-section&#x27;);
     if (!section) return;
-    var height = Math.ceil(section.getBoundingClientRect().height);
-    var nextHeight = height + &#x27;px&#x27;;
-    if (window.frameElement.style.height !== nextHeight) {
-      window.frameElement.style.height = nextHeight;
-    }
+
+    requestAnimationFrame(function () {
+      var height = Math.ceil(section.getBoundingClientRect().height);
+      var nextHeight = height + &#x27;px&#x27;;
+      if (window.frameElement.style.height !== nextHeight) {
+        window.frameElement.style.height = nextHeight;
+      }
+    });
   }
-  window.addEventListener(&#x27;load&#x27;, resizeFrame);
-  window.addEventListener(&#x27;resize&#x27;, resizeFrame);
-  if (&#x27;ResizeObserver&#x27; in window) {
-    var section = document.querySelector(&#x27;.wd-section&#x27;);
-    if (section) new ResizeObserver(resizeFrame).observe(section);
+
+  function resizeAfterLayout() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resizeFrame, 120);
   }
-  setTimeout(resizeFrame, 100);
-  setTimeout(resizeFrame, 800);
-  setTimeout(resizeFrame, 2000);
+
+  window.addEventListener(&#x27;load&#x27;, resizeAfterLayout, { once: true });
+  window.addEventListener(&#x27;resize&#x27;, resizeAfterLayout, { passive: true });
+
+  if (document.fonts &amp;&amp; document.fonts.ready) {
+    document.fonts.ready.then(resizeFrame);
+  }
+
+  resizeAfterLayout();
 })();
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;"
   scrolling="no"
-  loading="lazy"
-  style="display:block;width:100%;height:1180px;border:0;margin:0;padding:0;background:#17204a;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1180px;"
+  loading="eager"
+  style="display:block;width:100%;height:1420px;border:0;margin:0;padding:0;background:#17204a;overflow:hidden;overflow-anchor:none;"
 ></iframe>
 <!-- ══ END RECENT WEB DESIGNS ══ -->
 
@@ -2902,36 +2942,41 @@
 
 &lt;script id=&quot;kg-technical-skills-frame-resizer&quot;&gt;
 (function () {
+  var resizeTimer = 0;
+
   function resizeFrame() {
     if (!window.frameElement) return;
-    var doc = document.documentElement;
-    var body = document.body;
-    var height = Math.max(
-      doc ? doc.scrollHeight : 0,
-      doc ? doc.offsetHeight : 0,
-      body ? body.scrollHeight : 0,
-      body ? body.offsetHeight : 0
-    );
-    var nextHeight = height + &#x27;px&#x27;;
-    if (window.frameElement.style.height !== nextHeight) {
-      window.frameElement.style.height = nextHeight;
-    }
+
+    requestAnimationFrame(function () {
+      var section = document.querySelector(&#x27;.skills-section&#x27;) || document.body;
+      var height = Math.ceil(section.getBoundingClientRect().height);
+      var nextHeight = height + &#x27;px&#x27;;
+      if (window.frameElement.style.height !== nextHeight) {
+        window.frameElement.style.height = nextHeight;
+      }
+    });
   }
-  window.addEventListener(&#x27;load&#x27;, resizeFrame);
-  window.addEventListener(&#x27;resize&#x27;, resizeFrame);
-  if (&#x27;ResizeObserver&#x27; in window) {
-    new ResizeObserver(resizeFrame).observe(document.documentElement);
+
+  function resizeAfterLayout() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resizeFrame, 120);
   }
-  setTimeout(resizeFrame, 100);
-  setTimeout(resizeFrame, 800);
-  setTimeout(resizeFrame, 2000);
+
+  window.addEventListener(&#x27;load&#x27;, resizeAfterLayout, { once: true });
+  window.addEventListener(&#x27;resize&#x27;, resizeAfterLayout, { passive: true });
+
+  if (document.fonts &amp;&amp; document.fonts.ready) {
+    document.fonts.ready.then(resizeFrame);
+  }
+
+  resizeAfterLayout();
 })();
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;"
   scrolling="no"
-  loading="lazy"
-  style="display:block;width:100%;height:900px;border:0;margin:0;padding:0;background:#020613;overflow:hidden;content-visibility:auto;contain-intrinsic-size:900px;"
+  loading="eager"
+  style="display:block;width:100%;height:980px;border:0;margin:0;padding:0;background:#020613;overflow:hidden;overflow-anchor:none;"
 ></iframe>
 <!-- ══ END TECHNICAL SKILLS ══ -->
 
@@ -2956,16 +3001,14 @@
   var title = document.querySelector('.pg-carousel-title');
   if (!title) return;
 
-  var shineObs = new IntersectionObserver(function(entries) {
+  var shineObs = new IntersectionObserver(function(entries, observer) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
-        // Remove and re-add class to retrigger animation each time
-        title.classList.remove('pg-shine-active');
-        void title.offsetWidth; // force reflow
         title.classList.add('pg-shine-active');
+        observer.unobserve(title);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.35 });
 
   shineObs.observe(title);
 })();
