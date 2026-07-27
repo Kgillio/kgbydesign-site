@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -1060,6 +1060,20 @@
   }
 }
 
+
+
+    /* Scroll-performance safeguards */
+    .wall-stage { contain: layout paint; }
+    .wall-stage #wall {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-scroll-cue::after,
+      .pg-carousel-title.pg-shine-active { animation: none !important; }
+    }
 </style>
 </head>
 <body>
@@ -1370,8 +1384,6 @@
   cursor: pointer;
   flex-shrink: 0;
   transition: width var(--pc-ease), height var(--pc-ease), transform var(--pc-ease), box-shadow var(--pc-ease), opacity 0.3s ease;
-  backdrop-filter: blur(12px) saturate(1.1);
-  -webkit-backdrop-filter: blur(12px) saturate(1.1);
   box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15);
   opacity: 0.88;
   z-index: 1;
@@ -2740,7 +2752,10 @@
     var section = document.querySelector(&#x27;.wd-section&#x27;);
     if (!section) return;
     var height = Math.ceil(section.getBoundingClientRect().height);
-    window.frameElement.style.height = height + &#x27;px&#x27;;
+    var nextHeight = height + &#x27;px&#x27;;
+    if (window.frameElement.style.height !== nextHeight) {
+      window.frameElement.style.height = nextHeight;
+    }
   }
   window.addEventListener(&#x27;load&#x27;, resizeFrame);
   window.addEventListener(&#x27;resize&#x27;, resizeFrame);
@@ -2756,8 +2771,8 @@
 &lt;/body&gt;
 &lt;/html&gt;"
   scrolling="no"
-  loading="eager"
-  style="display:block;width:100%;height:1180px;border:0;margin:0;padding:0;background:#17204a;overflow:hidden;"
+  loading="lazy"
+  style="display:block;width:100%;height:1180px;border:0;margin:0;padding:0;background:#17204a;overflow:hidden;content-visibility:auto;contain-intrinsic-size:1180px;"
 ></iframe>
 <!-- ══ END RECENT WEB DESIGNS ══ -->
 
@@ -2897,7 +2912,10 @@
       body ? body.scrollHeight : 0,
       body ? body.offsetHeight : 0
     );
-    window.frameElement.style.height = height + &#x27;px&#x27;;
+    var nextHeight = height + &#x27;px&#x27;;
+    if (window.frameElement.style.height !== nextHeight) {
+      window.frameElement.style.height = nextHeight;
+    }
   }
   window.addEventListener(&#x27;load&#x27;, resizeFrame);
   window.addEventListener(&#x27;resize&#x27;, resizeFrame);
@@ -2913,7 +2931,7 @@
 &lt;/html&gt;"
   scrolling="no"
   loading="lazy"
-  style="display:block;width:100%;height:900px;border:0;margin:0;padding:0;background:#020613;overflow:hidden;"
+  style="display:block;width:100%;height:900px;border:0;margin:0;padding:0;background:#020613;overflow:hidden;content-visibility:auto;contain-intrinsic-size:900px;"
 ></iframe>
 <!-- ══ END TECHNICAL SKILLS ══ -->
 
@@ -3078,32 +3096,76 @@
       wall.appendChild(row);
     });
 
-    let debounce = (func, wait, immediate) => {
-      var timeout;
-      return function () {
-        var context = this, args = arguments;
-        var later = function () {
-          timeout = null;
-          if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-      };
-    };
-
-    let scrollPosition = 0;
-    let scrollWall = debounce((event) => {
-      scrollPosition -= event.deltaY;
-      wall.style.transform = `rotateY(45deg) translateX(${scrollPosition}px)`;
-    }, 10);
-
+    // Smooth wheel-controlled wall movement without blocking page scrolling.
+    // The page continues vertically while the image wall glides sideways.
     const wallStage = document.querySelector('.wall-stage');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    let wallCurrentX = 0;
+    let wallTargetX = 0;
+    let wallMinX = 0;
+    let wallAnimationFrame = null;
+
+    function measureWallTravel() {
+      const widestRow = rows.reduce((widest, row) => {
+        return Math.max(widest, row.scrollWidth);
+      }, 0);
+
+      // Keep a small amount of the last images visible instead of overscrolling.
+      const visibleWidth = wallStage.clientWidth * 0.82;
+      wallMinX = -Math.max(0, widestRow - visibleWidth);
+      wallTargetX = Math.max(wallMinX, Math.min(0, wallTargetX));
+      wallCurrentX = Math.max(wallMinX, Math.min(0, wallCurrentX));
+    }
+
+    function renderWallPosition() {
+      const remaining = wallTargetX - wallCurrentX;
+      const easing = prefersReducedMotion.matches ? 1 : 0.16;
+      wallCurrentX += remaining * easing;
+
+      if (Math.abs(remaining) < 0.35) {
+        wallCurrentX = wallTargetX;
+      }
+
+      wall.style.transform = `rotateY(45deg) translate3d(${wallCurrentX}px, 0, 0)`;
+
+      if (wallCurrentX !== wallTargetX) {
+        wallAnimationFrame = requestAnimationFrame(renderWallPosition);
+      } else {
+        wallAnimationFrame = null;
+      }
+    }
+
+    function requestWallRender() {
+      if (wallAnimationFrame === null) {
+        wallAnimationFrame = requestAnimationFrame(renderWallPosition);
+      }
+    }
+
     wallStage.addEventListener('wheel', (event) => {
-      event.preventDefault();
-      scrollWall(event);
-    }, { passive: false });
+      // Normalize mouse wheels and trackpads without canceling normal page scroll.
+      let delta = event.deltaY;
+      if (event.deltaMode === 1) delta *= 16;
+      if (event.deltaMode === 2) delta *= window.innerHeight;
+
+      wallTargetX -= delta * 0.42;
+      wallTargetX = Math.max(wallMinX, Math.min(0, wallTargetX));
+      requestWallRender();
+    }, { passive: true });
+
+    // Recalculate after images settle and whenever the viewport changes.
+    Promise.all(
+      Array.from(wall.querySelectorAll('img')).map((img) => {
+        if (img.complete) return Promise.resolve();
+        return new Promise((resolve) => {
+          img.addEventListener('load', resolve, { once: true });
+          img.addEventListener('error', resolve, { once: true });
+        });
+      })
+    ).then(measureWallTravel);
+
+    window.addEventListener('resize', measureWallTravel, { passive: true });
+    measureWallTravel();
   </script>
 </body>
 </html>
