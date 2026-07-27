@@ -2461,6 +2461,78 @@
 }
   
     </style>
+
+<style id="kg-digital-work-full-width-final">
+/* Final desktop layout: every card stays inside the viewport and shares the full row. */
+@media (min-width: 1200px) {
+  #recent-digital-work .pg-carousel-section {
+    --pc-card-h: clamp(250px, 19vw, 350px);
+    --pc-active-h: clamp(340px, 25vw, 460px);
+    --pc-gap: clamp(7px, 0.65vw, 13px);
+  }
+
+  #recent-digital-work .pc-wrap {
+    width: 100%;
+    max-width: none;
+    height: calc(var(--pc-active-h) + 72px);
+    margin: 0;
+    padding-inline: clamp(18px, 1.7vw, 34px);
+    overflow: visible;
+  }
+
+  #recent-digital-work .pc-track {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    padding: 28px 0 44px;
+    gap: var(--pc-gap);
+    transform: none !important;
+    overflow: visible;
+    contain: layout;
+  }
+
+  #recent-digital-work .pc-card {
+    width: auto !important;
+    min-width: 0;
+    max-width: none;
+    height: var(--pc-card-h);
+    flex: 1 1 0;
+  }
+
+  #recent-digital-work .pc-card.pc-active {
+    width: auto !important;
+    height: var(--pc-active-h);
+    flex: 1.48 1 0;
+  }
+}
+
+/* Mid-size screens use a normal horizontal row rather than clipping cards. */
+@media (min-width: 981px) and (max-width: 1199px) {
+  #recent-digital-work .pc-wrap {
+    width: 100%;
+    padding-inline: 20px;
+    overflow: visible;
+  }
+
+  #recent-digital-work .pc-track {
+    width: 100%;
+    min-width: 0;
+    transform: none !important;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-inline: 0;
+    scrollbar-width: none;
+  }
+
+  #recent-digital-work .pc-track::-webkit-scrollbar {
+    display: none;
+  }
+}
+</style>
 <main class="pg-root">
 <!-- ══ CAROUSEL SECTION ══ -->
 <section class="pg-carousel-section">
