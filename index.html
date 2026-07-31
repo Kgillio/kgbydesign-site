@@ -2271,6 +2271,605 @@
 }
 </style>
 
+<style id="kg-recent-web-designs-hex-layout">
+/* Recent Web Designs — reference-matched honeycomb redesign.
+   Scoped entirely to #recent-web-designs. */
+#recent-web-designs {
+  position: relative;
+  display: flow-root;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #fbf8f2 !important;
+  color: #102040;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+#recent-web-designs .wd-section {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 660px;
+  padding: clamp(66px, 6vw, 96px) clamp(26px, 5vw, 84px) clamp(72px, 6vw, 96px) !important;
+  overflow: hidden;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: #fbf8f2 !important;
+}
+
+/* Remove the former blue transition/fog layers. */
+#recent-web-designs .wd-section::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Very faint premium paper detail only; no blue haze. */
+#recent-web-designs .wd-section::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  opacity: 0.62 !important;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(184, 132, 45, 0.10) 0 1px, transparent 1.5px) 0 0 / 15px 15px no-repeat,
+    radial-gradient(circle at 92% 78%, rgba(16, 32, 64, 0.035), transparent 34%),
+    linear-gradient(120deg, rgba(255,255,255,0.35), transparent 36%) !important;
+}
+
+#recent-web-designs .wd-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1540px, 100%);
+  max-width: none;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(760px, 1.78fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 72px);
+}
+
+#recent-web-designs .wd-dots,
+#recent-web-designs .wd-divider,
+#recent-web-designs .wd-bottom-cta {
+  display: none !important;
+}
+
+#recent-web-designs .wd-header {
+  position: relative;
+  z-index: 3;
+  max-width: 390px;
+  margin: 0;
+  padding: 0 0 0 clamp(0px, 1vw, 12px);
+  text-align: left;
+}
+
+#recent-web-designs .wd-kicker {
+  display: block;
+  margin: 0 0 16px;
+  color: #bc8331;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+#recent-web-designs .wd-kicker svg {
+  display: none !important;
+}
+
+#recent-web-designs .wd-title {
+  margin: 0;
+  color: #0d1d3c;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(62px, 5.1vw, 88px);
+  font-weight: 500;
+  line-height: 0.90;
+  letter-spacing: -0.045em;
+}
+
+#recent-web-designs .wd-subtitle {
+  max-width: 320px;
+  margin: 28px 0 0;
+  color: rgba(13, 29, 60, 0.63);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+#recent-web-designs .wd-subtitle span {
+  color: #bd8230;
+  font-weight: 500;
+}
+
+#recent-web-designs .wd-view-all {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  min-height: 48px;
+  margin-top: 34px;
+  padding: 14px 24px;
+  border: 1px solid rgba(191, 139, 55, 0.72);
+  border-radius: 4px;
+  background: linear-gradient(180deg, #102442 0%, #07182d 100%);
+  box-shadow: 0 10px 22px rgba(8, 22, 43, 0.14), inset 0 1px 0 rgba(255,255,255,0.06);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+#recent-web-designs .wd-view-all:hover {
+  transform: translateY(-2px);
+  border-color: rgba(211, 163, 83, 0.96);
+  box-shadow: 0 14px 28px rgba(8, 22, 43, 0.19), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+#recent-web-designs .wd-grid {
+  --hex-w: clamp(188px, 14.7vw, 252px);
+  --hex-gap: clamp(6px, 0.7vw, 11px);
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: max-content;
+  max-width: none;
+  justify-self: end;
+  padding: 18px 8px 22px 56px;
+}
+
+/* Subtle curved gold construction lines behind the honeycomb. */
+#recent-web-designs .wd-grid::before {
+  content: "";
+  position: absolute;
+  left: -120px;
+  top: 12%;
+  width: 78%;
+  height: 78%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.34;
+  background: repeating-radial-gradient(
+    ellipse 84% 68% at 28% 52%,
+    transparent 0 42px,
+    rgba(189, 136, 49, 0.12) 43px 44px,
+    transparent 45px 77px
+  );
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 24%, rgba(0,0,0,0.72) 70%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 24%, rgba(0,0,0,0.72) 70%, transparent 100%);
+}
+
+#recent-web-designs .wd-hex-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--hex-gap);
+}
+
+#recent-web-designs .wd-hex-row--bottom {
+  margin-top: calc(var(--hex-w) * -0.218 + var(--hex-gap));
+  margin-left: calc((var(--hex-w) + var(--hex-gap)) / 2);
+}
+
+#recent-web-designs .wd-card {
+  position: relative;
+  flex: 0 0 var(--hex-w);
+  width: var(--hex-w);
+  aspect-ratio: 0.866 / 1;
+  min-height: 0;
+  max-height: none;
+  height: auto;
+  padding: 4px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #fbf8f2;
+  box-shadow: none;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  filter: drop-shadow(0 13px 15px rgba(16, 31, 53, 0.13));
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: transform 220ms ease, filter 220ms ease;
+  contain: layout paint;
+}
+
+#recent-web-designs .wd-card:hover {
+  transform: translateY(-5px);
+  filter: drop-shadow(0 18px 20px rgba(16, 31, 53, 0.18));
+  box-shadow: none;
+}
+
+#recent-web-designs .wd-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  clip-path: inherit;
+  background:
+    radial-gradient(circle at 28% 18%, rgba(92, 124, 158, 0.16), transparent 30%),
+    linear-gradient(145deg, #18314f 0%, #0d2036 48%, #071626 100%);
+}
+
+#recent-web-designs .wd-card-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.34;
+  background:
+    repeating-linear-gradient(116deg, transparent 0 13px, rgba(255,255,255,0.014) 14px, transparent 15px 29px),
+    radial-gradient(circle at 50% 110%, rgba(203, 151, 65, 0.10), transparent 45%);
+}
+
+#recent-web-designs .wd-card--burgundy .wd-card-inner {
+  background:
+    radial-gradient(circle at 28% 18%, rgba(195, 89, 105, 0.15), transparent 30%),
+    linear-gradient(145deg, #791a2d 0%, #571222 52%, #35101b 100%);
+}
+
+#recent-web-designs .wd-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  overflow: hidden;
+  background: transparent !important;
+  clip-path: inherit;
+  contain: layout paint;
+}
+
+#recent-web-designs .wd-video-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(6, 18, 32, 0.18), rgba(6, 18, 32, 0.48));
+  transition: background 180ms ease;
+}
+
+#recent-web-designs .wd-card--burgundy .wd-video-wrap::after {
+  background: linear-gradient(180deg, rgba(65, 9, 21, 0.16), rgba(47, 7, 16, 0.44));
+}
+
+#recent-web-designs .wd-video-wrap video,
+#recent-web-designs .wd-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  object-fit: cover;
+  opacity: 0.58;
+  filter: saturate(0.84) brightness(0.66) contrast(1.08);
+  transform: scale(1.015);
+  cursor: pointer;
+  transition: opacity 220ms ease, filter 220ms ease, transform 420ms ease;
+}
+
+/* The paused first video frame is the card thumbnail. */
+#recent-web-designs .wd-video-wrap.preview-ready video,
+#recent-web-designs .wd-video-wrap.preview-ready iframe {
+  opacity: 0.72;
+}
+
+#recent-web-designs .wd-card:hover .wd-video-wrap:not(.playing) video,
+#recent-web-designs .wd-card:hover .wd-video-wrap:not(.playing) iframe {
+  opacity: 0.80;
+  filter: saturate(0.92) brightness(0.72) contrast(1.08);
+  transform: scale(1.045);
+}
+
+#recent-web-designs .wd-video-wrap.playing video,
+#recent-web-designs .wd-video-wrap.playing iframe {
+  opacity: 1;
+  filter: saturate(1) brightness(0.92) contrast(1.03);
+  transform: scale(1);
+}
+
+#recent-web-designs .wd-video-wrap.playing::after {
+  background: linear-gradient(180deg, rgba(5, 14, 26, 0.03), rgba(5, 14, 26, 0.10));
+}
+
+#recent-web-designs .wd-card-number {
+  position: absolute;
+  top: 10.5%;
+  left: 50%;
+  z-index: 4;
+  transform: translateX(-50%);
+  color: #d2a24f;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(18px, 1.55vw, 25px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+#recent-web-designs .wd-card-body {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25% 12% 24%;
+  text-align: center;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  contain: layout paint;
+}
+
+#recent-web-designs .wd-video-wrap.playing + .wd-card-body {
+  opacity: 0;
+}
+
+#recent-web-designs .wd-card-kicker {
+  display: block;
+  margin: 0 0 11px;
+  color: rgba(214, 169, 91, 0.78);
+  font-size: clamp(7px, 0.55vw, 9px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+}
+
+#recent-web-designs .wd-card-kicker svg {
+  display: none !important;
+}
+
+#recent-web-designs .wd-card-row {
+  display: block;
+  width: 100%;
+}
+
+#recent-web-designs .wd-card-title {
+  margin: 0 auto;
+  max-width: 92%;
+  color: rgba(255,255,255,0.96);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: clamp(13px, 1.18vw, 18px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+#recent-web-designs .wd-play-badge {
+  position: absolute;
+  left: 50%;
+  bottom: 11.5%;
+  inset: auto auto 11.5% 50%;
+  z-index: 5;
+  width: 39px;
+  height: 39px;
+  display: block;
+  transform: translateX(-50%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+#recent-web-designs .wd-play-badge-inner {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(215, 164, 78, 0.88);
+  border-radius: 50%;
+  background: rgba(5, 17, 31, 0.36) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.025);
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+#recent-web-designs .wd-play-badge:hover .wd-play-badge-inner {
+  transform: scale(1.07);
+  border-color: #e0b35d;
+  background: rgba(5, 17, 31, 0.64) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.045);
+}
+
+#recent-web-designs .wd-play-badge svg {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  overflow: visible;
+  fill: none;
+  stroke: #e3b65f;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#recent-web-designs .wd-video-wrap.playing .wd-play-badge {
+  display: none;
+}
+
+@media (max-width: 1280px) {
+  #recent-web-designs .wd-shell {
+    grid-template-columns: minmax(260px, 0.72fr) minmax(650px, 1.6fr);
+    gap: 30px;
+  }
+
+  #recent-web-designs .wd-grid {
+    --hex-w: clamp(178px, 15.2vw, 220px);
+    padding-left: 28px;
+  }
+}
+
+@media (max-width: 1080px) {
+  #recent-web-designs .wd-section {
+    min-height: 0;
+    padding: 72px 28px 84px !important;
+  }
+
+  #recent-web-designs .wd-shell {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  #recent-web-designs .wd-header {
+    max-width: 620px;
+    padding-left: 0;
+  }
+
+  #recent-web-designs .wd-title {
+    font-size: clamp(58px, 9vw, 78px);
+  }
+
+  #recent-web-designs .wd-subtitle {
+    max-width: 500px;
+  }
+
+  #recent-web-designs .wd-grid {
+    --hex-w: min(39vw, 250px);
+    display: grid;
+    grid-template-columns: repeat(2, var(--hex-w));
+    justify-content: center;
+    justify-self: stretch;
+    width: 100%;
+    gap: 14px 12px;
+    padding: 12px 0 0;
+  }
+
+  #recent-web-designs .wd-grid::before {
+    left: 5%;
+    top: 8%;
+    width: 90%;
+    height: 86%;
+  }
+
+  #recent-web-designs .wd-hex-row {
+    display: contents;
+  }
+
+  #recent-web-designs .wd-hex-row--bottom {
+    margin: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  #recent-web-designs .wd-section {
+    padding: 62px 18px 72px !important;
+  }
+
+  #recent-web-designs .wd-title {
+    font-size: clamp(52px, 16vw, 68px);
+  }
+
+  #recent-web-designs .wd-subtitle {
+    margin-top: 22px;
+    font-size: 15px;
+  }
+
+  #recent-web-designs .wd-view-all {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  #recent-web-designs .wd-grid {
+    --hex-w: min(82vw, 286px);
+    grid-template-columns: var(--hex-w);
+    gap: 16px;
+  }
+
+  #recent-web-designs .wd-grid::before {
+    opacity: 0.34;
+  }
+
+  #recent-web-designs .wd-card-number {
+    font-size: 23px;
+  }
+
+  #recent-web-designs .wd-card-kicker {
+    font-size: 8px;
+  }
+
+  #recent-web-designs .wd-card-title {
+    font-size: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #recent-web-designs .wd-card,
+  #recent-web-designs .wd-view-all,
+  #recent-web-designs .wd-play-badge-inner,
+  #recent-web-designs .wd-video-wrap video,
+  #recent-web-designs .wd-card-body {
+    transition: none !important;
+  }
+}
+</style>
+
+
+<style id="kg-native-hex-video-player-fix">
+/* Native, playable videos clipped directly into the honeycomb hexagons. */
+#recent-web-designs .wd-video-wrap {
+  z-index: 2 !important;
+  pointer-events: auto !important;
+}
+
+#recent-web-designs .wd-video-wrap::after {
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background: linear-gradient(180deg, rgba(6, 18, 32, 0.10) 0%, rgba(6, 18, 32, 0.28) 62%, rgba(6, 18, 32, 0.10) 100%) !important;
+}
+
+#recent-web-designs .wd-card--burgundy .wd-video-wrap::after {
+  background: linear-gradient(180deg, rgba(65, 9, 21, 0.08) 0%, rgba(47, 7, 16, 0.24) 62%, rgba(47, 7, 16, 0.08) 100%) !important;
+}
+
+#recent-web-designs .wd-video-wrap video {
+  z-index: 2 !important;
+  opacity: 0.88 !important;
+  filter: saturate(0.92) brightness(0.78) contrast(1.04) !important;
+  transform: none !important;
+  cursor: default !important;
+  pointer-events: auto !important;
+}
+
+#recent-web-designs .wd-card:hover .wd-video-wrap video,
+#recent-web-designs .wd-video-wrap.playing video {
+  opacity: 1 !important;
+  filter: saturate(1) brightness(0.96) contrast(1.02) !important;
+  transform: none !important;
+}
+
+/* The project label remains decorative and never blocks the native controls. */
+#recent-web-designs .wd-card-body,
+#recent-web-designs .wd-card-number {
+  pointer-events: none !important;
+  transition: opacity 160ms ease !important;
+}
+
+#recent-web-designs .wd-card.is-playing .wd-card-body,
+#recent-web-designs .wd-card.is-playing .wd-card-number {
+  opacity: 0 !important;
+}
+
+/* Remove the prior simulated play control completely. */
+#recent-web-designs .wd-play-badge {
+  display: none !important;
+}
+
+/* Keep browser video controls inside the clipped hexagon and above all overlays. */
+#recent-web-designs video::-webkit-media-controls,
+#recent-web-designs video::-webkit-media-controls-enclosure,
+#recent-web-designs video::-webkit-media-controls-panel {
+  z-index: 20;
+}
+</style>
 </head>
 <body>
 <!-- Hero layout expanded to full viewport width for desktop and ultrawide screens. -->
@@ -3364,98 +3963,96 @@
 <!-- ══ WEB DESIGNS SECTION ══ -->
 <section class="wd-section">
 <div class="wd-shell">
-<div aria-hidden="true" class="wd-dots"></div>
 <div class="wd-header">
 <div class="wd-kicker">
 <svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l1.6 4.5L18 9l-4.4 1.5L12 15l-1.6-4.5L6 9l4.4-1.5L12 3z"></path></svg>
           Latest Builds
         </div>
-<h2 class="wd-title">Recent Web Designs</h2>
+<h2 class="wd-title">Recent<br/>Web Designs</h2>
 <p class="wd-subtitle">Modern, responsive websites built for <span>performance, clarity,</span> and <span>results.</span></p>
-<div aria-hidden="true" class="wd-divider"><span></span><i></i><span></span></div>
+<a class="wd-view-all" href="#recent-digital-work">View All Projects</a>
 </div>
 <div class="wd-grid" id="wdGrid">
+<div class="wd-hex-row wd-hex-row--top">
 <div class="wd-card">
+<div class="wd-card-inner">
+<span class="wd-card-number">01</span>
 <div class="wd-video-wrap">
-<video loop="" muted="" playsinline="" preload="none" src="assets/2026/03/safco-.mp4" style="background:linear-gradient(135deg,#23374f 0%,#0f1824 100%);"></video>
-<div class="wd-play-badge"><div class="wd-play-badge-inner"><svg viewbox="0 0 24 24"><path d="M8 6l9 6-9 6V6z"></path></svg></div></div>
+<video controls="" loop="" muted="" playsinline="" preload="auto" src="assets/2026/03/safco-.mp4" style="background:linear-gradient(135deg,#23374f 0%,#0f1824 100%);"></video>
+
 </div>
 <div class="wd-card-body">
 <div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>Supplier Platform</div>
-<div class="wd-card-row">
-<div class="wd-card-title">Safco Supplier Page Design</div>
+<div class="wd-card-row"><div class="wd-card-title">Safco Supplier Page Design</div></div>
 </div>
 </div>
 </div>
 <div class="wd-card">
+<div class="wd-card-inner">
+<span class="wd-card-number">02</span>
 <div class="wd-video-wrap">
-<video loop="" muted="" playsinline="" preload="none" src="assets/2026/03/rogers.mp4" style="background:linear-gradient(135deg,#10224b 0%,#0f162a 100%);"></video>
-<div class="wd-play-badge"><div class="wd-play-badge-inner"><svg viewbox="0 0 24 24"><path d="M8 6l9 6-9 6V6z"></path></svg></div></div>
+<video controls="" loop="" muted="" playsinline="" preload="auto" src="assets/2026/03/rogers.mp4" style="background:linear-gradient(135deg,#10224b 0%,#0f162a 100%);"></video>
+
 </div>
 <div class="wd-card-body">
 <div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>Supplier Platform</div>
-<div class="wd-card-row">
-<div class="wd-card-title">Rogers Supplier Page Design</div>
+<div class="wd-card-row"><div class="wd-card-title">Rogers Supplier Page Design</div></div>
 </div>
 </div>
 </div>
 <div class="wd-card">
+<div class="wd-card-inner">
+<span class="wd-card-number">03</span>
 <div class="wd-video-wrap">
-<video loop="" muted="" playsinline="" preload="none" src="assets/2026/03/ACME.mp4" style="background:linear-gradient(135deg,#24456d 0%,#0f1d31 100%);"></video>
-<div class="wd-play-badge"><div class="wd-play-badge-inner"><svg viewbox="0 0 24 24"><path d="M8 6l9 6-9 6V6z"></path></svg></div></div>
+<video controls="" loop="" muted="" playsinline="" preload="auto" src="assets/2026/03/ACME.mp4" style="background:linear-gradient(135deg,#24456d 0%,#0f1d31 100%);"></video>
+
 </div>
 <div class="wd-card-body">
 <div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>Supplier Platform</div>
-<div class="wd-card-row">
-<div class="wd-card-title">ACME Supplier Page Design</div>
+<div class="wd-card-row"><div class="wd-card-title">ACME Supplier Page Design</div></div>
 </div>
 </div>
 </div>
+</div>
+<div class="wd-hex-row wd-hex-row--bottom">
 <div class="wd-card">
+<div class="wd-card-inner">
+<span class="wd-card-number">04</span>
 <div class="wd-video-wrap">
-<video loop="" muted="" playsinline="" preload="none" src="assets/2026/03/tattoo.mp4" style="background:linear-gradient(135deg,#151515 0%,#090909 100%);"></video>
-<div class="wd-play-badge"><div class="wd-play-badge-inner"><svg viewbox="0 0 24 24"><path d="M8 6l9 6-9 6V6z"></path></svg></div></div>
+<video controls="" loop="" muted="" playsinline="" preload="auto" src="assets/2026/03/tattoo.mp4" style="background:linear-gradient(135deg,#151515 0%,#090909 100%);"></video>
+
 </div>
 <div class="wd-card-body">
 <div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>E-Commerce Design</div>
-<div class="wd-card-row">
-<div class="wd-card-title">InkLine E-Commerce Design</div>
+<div class="wd-card-row"><div class="wd-card-title">InkLine E-Commerce Design</div></div>
 </div>
 </div>
 </div>
 <div class="wd-card">
+<div class="wd-card-inner">
+<span class="wd-card-number">05</span>
 <div class="wd-video-wrap">
-<video loop="" muted="" playsinline="" preload="none" src="assets/2026/03/newest-of-the-products.mp4" style="background:linear-gradient(135deg,#24456d 0%,#1a273d 100%);"></video>
-<div class="wd-play-badge"><div class="wd-play-badge-inner"><svg viewbox="0 0 24 24"><path d="M8 6l9 6-9 6V6z"></path></svg></div></div>
+<video controls="" loop="" muted="" playsinline="" preload="auto" src="assets/2026/03/newest-of-the-products.mp4" style="background:linear-gradient(135deg,#24456d 0%,#1a273d 100%);"></video>
+
 </div>
 <div class="wd-card-body">
 <div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>Landing Page Design</div>
-<div class="wd-card-row">
-<div class="wd-card-title">Workspace Landing Page</div>
+<div class="wd-card-row"><div class="wd-card-title">Workspace Landing Page</div></div>
 </div>
 </div>
 </div>
-<div class="wd-card">
+<div class="wd-card wd-card--burgundy">
+<div class="wd-card-inner">
+<span class="wd-card-number">06</span>
 <div class="wd-video-wrap">
-<video loop="" muted="" playsinline="" preload="none" src="assets/2026/03/scholastic.mp4" style="background:linear-gradient(135deg,#8f1e2a 0%,#3c1522 100%);"></video>
-<div class="wd-play-badge"><div class="wd-play-badge-inner"><svg viewbox="0 0 24 24"><path d="M8 6l9 6-9 6V6z"></path></svg></div></div>
+<video controls="" loop="" muted="" playsinline="" preload="auto" src="assets/2026/03/scholastic.mp4" style="background:linear-gradient(135deg,#8f1e2a 0%,#3c1522 100%);"></video>
+
 </div>
 <div class="wd-card-body">
 <div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>Web Application Design</div>
-<div class="wd-card-row">
-<div class="wd-card-title">Election Activity Web App</div>
+<div class="wd-card-row"><div class="wd-card-title">Election Activity Web App</div></div>
 </div>
 </div>
-</div>
-</div>
-<div class="wd-bottom-cta">
-<div class="wd-bottom-copy">
-<div class="wd-bottom-icon">
-<svg viewbox="0 0 24 24"><path d="M4 5h16v10H4zM8 19h8M10 15v4M14 15v4"></path></svg>
-</div>
-<div>
-<div class="wd-bottom-title">More projects. More impact.</div>
-<div class="wd-bottom-text">See how design and development come together.</div>
 </div>
 </div>
 </div>
@@ -3728,30 +4325,44 @@
 (function () {
   var root = document.getElementById('recent-web-designs');
   if (!root) return;
+
   var videos = Array.prototype.slice.call(root.querySelectorAll('.wd-video-wrap video'));
 
   videos.forEach(function (video) {
-    var wrap = video.closest('.wd-video-wrap') || video.parentElement;
-    var badge = wrap.querySelector('.wd-play-badge');
+    var wrap = video.closest('.wd-video-wrap');
+    var card = video.closest('.wd-card');
 
-    function playVideo() {
-      if (video.readyState < 2) {
-        video.preload = 'auto';
-        try { video.load(); } catch (error) {}
-      }
-      wrap.classList.add('playing');
-      video.play().catch(function () { wrap.classList.remove('playing'); });
+    /* Keep each hexagon as an ordinary native HTML5 video player. */
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = 'auto';
+
+    function setPlayingState(isPlaying) {
+      if (wrap) wrap.classList.toggle('playing', isPlaying);
+      if (card) card.classList.toggle('is-playing', isPlaying);
     }
 
-    if (badge) badge.addEventListener('click', playVideo);
-    video.addEventListener('click', function () {
-      if (video.paused) playVideo();
-      else { video.pause(); wrap.classList.remove('playing'); }
+    video.addEventListener('play', function () {
+      videos.forEach(function (otherVideo) {
+        if (otherVideo !== video && !otherVideo.paused) otherVideo.pause();
+      });
+      setPlayingState(true);
     });
+
+    video.addEventListener('pause', function () {
+      setPlayingState(false);
+    });
+
     video.addEventListener('ended', function () {
-      wrap.classList.remove('playing');
-      try { video.currentTime = 0; } catch (error) {}
+      setPlayingState(false);
     });
+
+    video.addEventListener('error', function () {
+      setPlayingState(false);
+    });
+
+    /* Load enough data for the browser to display its video thumbnail/frame. */
+    try { video.load(); } catch (error) {}
   });
 
   if ('IntersectionObserver' in window) {
@@ -3759,8 +4370,6 @@
       if (!entries[0].isIntersecting) {
         videos.forEach(function (video) {
           if (!video.paused) video.pause();
-          var wrap = video.closest('.wd-video-wrap');
-          if (wrap) wrap.classList.remove('playing');
         });
       }
     }, { threshold: 0.01 });
