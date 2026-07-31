@@ -1667,7 +1667,312 @@
 #technical-skills .brand-tile,
 #technical-skills .feature-art,
 #technical-skills .search-card .feature-svg { filter: none !important; }
-</style></head>
+</style>
+<style id="technical-skills-project-style">
+/* Technical Skills restyled to match the Featured Software Projects section. */
+#technical-skills {
+  --accent: #d4a04f !important;
+  --accent-rgb: 201, 150, 63 !important;
+  position: relative;
+  isolation: isolate;
+  min-height: auto;
+  margin: 0;
+  color: #f4efe7;
+  font-family: "Inter", system-ui, sans-serif;
+  background:
+    radial-gradient(ellipse 70% 70% at 82% 18%, rgba(201, 150, 63, 0.16) 0%, transparent 62%),
+    radial-gradient(ellipse 46% 50% at 12% 90%, rgba(87, 104, 168, 0.18) 0%, transparent 62%),
+    linear-gradient(160deg, #0d0d0d 0%, #111735 46%, #0d1230 100%);
+}
+
+#technical-skills::before {
+  content: "";
+  position: absolute !important;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+  background:
+    linear-gradient(to bottom, #0d0d0d 0%, rgba(13, 13, 13, 0.20) 18%, transparent 50%, rgba(13, 18, 48, 0.75) 100%),
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: auto, 54px 54px, 54px 54px;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+#technical-skills::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  width: min(920px, 80vw);
+  height: 1px;
+  pointer-events: none;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(224, 176, 96, 0.38), transparent);
+  box-shadow: 0 0 34px rgba(224, 176, 96, 0.13);
+}
+
+#technical-skills .skills-section {
+  position: relative;
+  z-index: 2;
+  width: min(1120px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 112px 0 96px;
+}
+
+#technical-skills .section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  margin: 0 0 34px;
+  color: #ffffff;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-transform: none;
+  text-shadow: none;
+}
+
+#technical-skills .section-heading::before {
+  display: none;
+}
+
+#technical-skills .section-heading::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  max-width: none;
+  margin-left: 4px;
+  background: linear-gradient(90deg, rgba(224, 176, 96, 0.46), transparent);
+}
+
+#technical-skills .heading-node {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(224, 176, 96, 0.85);
+  border-radius: 0;
+  background: rgba(224, 176, 96, 0.12);
+  box-shadow: 0 0 16px rgba(224, 176, 96, 0.22);
+  transform: rotate(45deg);
+}
+
+#technical-skills .stack {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+#technical-skills .skill-card,
+#technical-skills .skill-card.web,
+#technical-skills .skill-card.data,
+#technical-skills .skill-card.search-card,
+#technical-skills .skill-card.workflow {
+  --accent: #d4a04f !important;
+  --accent-rgb: 201, 150, 63 !important;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(170px, 190px) 1fr;
+  gap: 26px;
+  align-items: center;
+  min-height: 300px;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 150, 63, 0.28);
+  border-radius: 26px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.025) 100%);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#technical-skills .skill-card::before {
+  content: "";
+  position: absolute;
+  inset: auto;
+  left: 0;
+  top: 38px;
+  width: 2px;
+  height: 52px;
+  border-radius: 0;
+  pointer-events: none;
+  opacity: 1;
+  background: linear-gradient(to bottom, transparent, rgba(224, 176, 96, 0.95), transparent);
+  box-shadow: 0 0 16px rgba(224, 176, 96, 0.55);
+}
+
+#technical-skills .skill-card::after {
+  content: "";
+  position: absolute;
+  right: -20%;
+  top: -30%;
+  width: 280px;
+  height: 280px;
+  pointer-events: none;
+  opacity: 1;
+  transform: none;
+  background: radial-gradient(circle, rgba(201, 150, 63, 0.18) 0%, transparent 70%);
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+#technical-skills .skill-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(224, 176, 96, 0.55);
+  box-shadow: 0 26px 90px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+#technical-skills .logo-panel {
+  position: relative;
+  z-index: 1;
+  height: 212px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 18px;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 25% 22%, rgba(224, 176, 96, 0.12), transparent 34%),
+    linear-gradient(145deg, rgba(18, 23, 49, 0.96), rgba(25, 31, 69, 0.86));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+#technical-skills .logo-panel::before,
+#technical-skills .logo-panel::after {
+  width: 22px;
+  height: 22px;
+  border-color: rgba(224, 176, 96, 0.60);
+}
+
+#technical-skills .copy {
+  position: relative;
+  z-index: 2;
+  padding-right: 12px;
+}
+
+#technical-skills h2 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(34px, 3.2vw, 44px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+#technical-skills ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: rgba(215, 205, 188, 0.68);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+#technical-skills li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+#technical-skills li::before {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: rgba(224, 176, 96, 0.92);
+  box-shadow: 0 0 10px rgba(224, 176, 96, 0.28);
+}
+
+#technical-skills .feature-art {
+  color: rgba(245, 241, 234, 0.92);
+}
+
+#technical-skills .search-card .feature-svg {
+  color: rgba(245, 241, 234, 0.92);
+}
+
+@media (max-width: 980px) {
+  #technical-skills .skills-section {
+    width: min(760px, calc(100% - 44px));
+    padding: 82px 0 78px;
+  }
+
+  #technical-skills .stack {
+    grid-template-columns: 1fr;
+  }
+
+  #technical-skills .skill-card,
+  #technical-skills .skill-card.web,
+  #technical-skills .skill-card.data,
+  #technical-skills .skill-card.search-card,
+  #technical-skills .skill-card.workflow {
+    grid-template-columns: 210px 1fr;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 620px) {
+  #technical-skills .skills-section {
+    width: calc(100% - 36px);
+    padding: 70px 0 72px;
+  }
+
+  #technical-skills .section-heading {
+    gap: 12px;
+    margin-bottom: 28px;
+    font-size: clamp(42px, 14vw, 58px);
+  }
+
+  #technical-skills .section-heading::after {
+    min-width: 34px;
+  }
+
+  #technical-skills .skill-card,
+  #technical-skills .skill-card.web,
+  #technical-skills .skill-card.data,
+  #technical-skills .skill-card.search-card,
+  #technical-skills .skill-card.workflow {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    min-height: auto;
+    padding: 26px 22px;
+    border-radius: 22px;
+  }
+
+  #technical-skills .logo-panel {
+    width: 100%;
+    max-width: 380px;
+    height: 184px;
+    justify-self: center;
+  }
+
+  #technical-skills .copy {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  #technical-skills li {
+    justify-content: center;
+  }
+}
+</style>
+</head>
 <body>
 <!-- Hero layout expanded to full viewport width for desktop and ultrawide screens. -->
 <section aria-labelledby="hero-title" class="hero">
