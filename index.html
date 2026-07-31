@@ -3308,6 +3308,535 @@
   }
 }
 </style>
+<style id="recent-web-designs-content-moved-up-fix">
+#recent-web-designs .wd-section {
+  overflow: hidden !important;
+}
+
+@media (min-width: 1081px) {
+  #recent-web-designs .wd-section {
+    min-height: 0 !important;
+    padding-top: 34px !important;
+    padding-bottom: 26px !important;
+    background: linear-gradient(
+      180deg,
+      #fbf8f2 0%,
+      #fbf8f2 74%,
+      #f4efe7 80%,
+      #e3ddd3 84%,
+      #918c92 88%,
+      #2e3977 93%,
+      #17204a 100%
+    ) !important;
+  }
+
+  #recent-web-designs .wd-shell {
+    align-items: start !important;
+    row-gap: 0 !important;
+    transform: translateY(-48px) !important;
+  }
+
+  #recent-web-designs .wd-header,
+  #recent-web-designs .wd-grid {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  #recent-web-designs .wd-section {
+    padding-bottom: 40px !important;
+  }
+}
+</style>
+
+
+<style id="technical-skills-software-experience-frame">
+/* Match the requested Technical Skills & Software Experience header. */
+#technical-skills .section-heading {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: nowrap !important;
+  gap: 12px !important;
+  margin: 0 0 32px !important;
+  color: rgba(245, 241, 234, 0.96) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: clamp(30px, 2.45vw, 44px) !important;
+  font-weight: 600 !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0.005em !important;
+  white-space: nowrap !important;
+}
+
+#technical-skills .section-heading::before,
+#technical-skills .section-heading::after {
+  content: none !important;
+  display: none !important;
+}
+
+#technical-skills .heading-primary,
+#technical-skills .heading-secondary,
+#technical-skills .heading-amp {
+  flex: 0 0 auto !important;
+}
+
+#technical-skills .heading-node {
+  width: 7px !important;
+  height: 7px !important;
+  flex: 0 0 7px !important;
+  margin-left: -4px !important;
+  border: 1px solid rgba(224, 176, 96, 0.78) !important;
+  background: rgba(224, 176, 96, 0.10) !important;
+  box-shadow: none !important;
+}
+
+#technical-skills .heading-bridge {
+  height: 1px !important;
+  flex: 1 1 130px !important;
+  min-width: 58px !important;
+  max-width: 150px !important;
+  margin: 0 18px 0 2px !important;
+  background: linear-gradient(90deg, rgba(201, 150, 63, 0.48), rgba(201, 150, 63, 0.12)) !important;
+}
+
+#technical-skills .heading-amp {
+  margin-right: clamp(18px, 4vw, 74px) !important;
+}
+
+/* Frame the service list with the same muted-gold border color used on the skill cards. */
+#technical-skills .skills-side {
+  align-self: stretch !important;
+  min-height: 100% !important;
+  margin: 22px 0 0 !important;
+  padding: 40px 28px !important;
+  border: 8px solid rgba(201, 150, 63, 0.28) !important;
+  border-radius: 30px !important;
+  background: rgba(10, 17, 45, 0.16) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.025) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 26px !important;
+}
+
+#technical-skills .skills-side .capability-group {
+  padding: 2px 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 1320px) {
+  #technical-skills .section-heading {
+    font-size: clamp(27px, 2.35vw, 38px) !important;
+  }
+
+  #technical-skills .heading-bridge {
+    max-width: 105px !important;
+    margin-right: 10px !important;
+  }
+
+  #technical-skills .heading-amp {
+    margin-right: clamp(12px, 2.8vw, 42px) !important;
+  }
+
+  #technical-skills .skills-side {
+    padding: 34px 20px !important;
+    border-width: 7px !important;
+    border-radius: 26px !important;
+  }
+}
+
+@media (max-width: 980px) {
+  #technical-skills .section-heading {
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+    row-gap: 12px !important;
+  }
+
+  #technical-skills .heading-bridge {
+    flex: 1 1 80px !important;
+    max-width: none !important;
+  }
+
+  #technical-skills .heading-amp {
+    margin-right: 18px !important;
+  }
+
+  #technical-skills .skills-side {
+    min-height: auto !important;
+    margin-top: 0 !important;
+    padding: 22px !important;
+    border-width: 4px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px 20px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  #technical-skills .section-heading {
+    font-size: clamp(27px, 8vw, 36px) !important;
+  }
+
+  #technical-skills .heading-secondary {
+    flex-basis: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  #technical-skills .heading-bridge {
+    min-width: 38px !important;
+  }
+
+  #technical-skills .skills-side {
+    grid-template-columns: 1fr !important;
+    padding: 18px !important;
+    border-width: 3px !important;
+    border-radius: 22px !important;
+  }
+}
+</style>
+
+
+<style id="technical-skills-heading-and-side-card-match">
+/* Match the added heading words to the original Technical Skills typography. */
+#technical-skills .section-heading {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: nowrap !important;
+  gap: 14px !important;
+  margin: 0 0 30px !important;
+  color: #ffffff !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: clamp(42px, 4.3vw, 68px) !important;
+  font-weight: 300 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.035em !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+  text-shadow: none !important;
+}
+
+#technical-skills .heading-primary,
+#technical-skills .heading-secondary,
+#technical-skills .heading-amp {
+  color: inherit !important;
+  font: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+}
+
+#technical-skills .heading-amp {
+  margin: 0 8px !important;
+}
+
+#technical-skills .heading-node {
+  width: 8px !important;
+  height: 8px !important;
+  flex: 0 0 8px !important;
+  margin: 0 !important;
+  border: 1px solid rgba(224, 176, 96, 0.85) !important;
+  border-radius: 0 !important;
+  background: rgba(224, 176, 96, 0.12) !important;
+  box-shadow: 0 0 16px rgba(224, 176, 96, 0.22) !important;
+  transform: rotate(45deg) !important;
+}
+
+#technical-skills .heading-bridge {
+  height: 1px !important;
+  flex: 1 1 112px !important;
+  min-width: 42px !important;
+  max-width: 150px !important;
+  margin: 0 8px 0 0 !important;
+  background: linear-gradient(90deg, rgba(224, 176, 96, 0.46), transparent) !important;
+}
+
+/* Make the Software Experience panel use the exact visual language of the skill cards. */
+#technical-skills .skills-side {
+  position: relative !important;
+  isolation: isolate !important;
+  align-self: stretch !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 42px 28px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(201, 150, 63, 0.28) !important;
+  border-radius: 24px !important;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.025) 100%) !important;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 26px !important;
+}
+
+#technical-skills .skills-side::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 34px !important;
+  width: 2px !important;
+  height: 52px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background: linear-gradient(to bottom, transparent, rgba(224, 176, 96, 0.95), transparent) !important;
+  box-shadow: 0 0 16px rgba(224, 176, 96, 0.55) !important;
+}
+
+#technical-skills .skills-side::after {
+  content: "" !important;
+  position: absolute !important;
+  right: -28% !important;
+  top: -24% !important;
+  width: 280px !important;
+  height: 280px !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  background: radial-gradient(circle, rgba(201, 150, 63, 0.18) 0%, transparent 70%) !important;
+}
+
+#technical-skills .skills-side .capability-group {
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 2px 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 1320px) {
+  #technical-skills .section-heading {
+    font-size: clamp(36px, 4vw, 56px) !important;
+    gap: 10px !important;
+  }
+
+  #technical-skills .heading-bridge {
+    max-width: 90px !important;
+  }
+
+  #technical-skills .skills-side {
+    padding: 34px 22px !important;
+  }
+}
+
+@media (max-width: 980px) {
+  #technical-skills .section-heading {
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+    row-gap: 10px !important;
+  }
+
+  #technical-skills .heading-bridge {
+    flex: 1 1 70px !important;
+    max-width: 130px !important;
+  }
+
+  #technical-skills .skills-side {
+    min-height: auto !important;
+    padding: 24px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px 20px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  #technical-skills .section-heading {
+    font-size: clamp(34px, 10vw, 48px) !important;
+  }
+
+  #technical-skills .heading-secondary {
+    flex-basis: 100% !important;
+  }
+
+  #technical-skills .skills-side {
+    grid-template-columns: 1fr !important;
+    padding: 22px 18px !important;
+    border-radius: 22px !important;
+  }
+}
+</style>
+
+
+<style id="technical-skills-column-heading-alignment">
+/* Align each heading directly above its matching card column. */
+@media (min-width: 981px) {
+  #technical-skills .section-heading {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr) !important;
+    column-gap: 0 !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 0 30px !important;
+    white-space: nowrap !important;
+  }
+
+  #technical-skills .heading-primary {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: center !important;
+    text-align: center !important;
+  }
+
+  #technical-skills .heading-amp {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: center !important;
+    align-self: center !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  #technical-skills .heading-secondary {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    justify-self: center !important;
+    text-align: center !important;
+  }
+
+  #technical-skills .heading-node,
+  #technical-skills .heading-bridge {
+    display: none !important;
+  }
+}
+
+/* Once the cards stack, return the heading to a natural responsive line. */
+@media (max-width: 980px) {
+  #technical-skills .section-heading {
+    display: flex !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    white-space: normal !important;
+  }
+
+  #technical-skills .heading-node,
+  #technical-skills .heading-bridge {
+    display: none !important;
+  }
+
+  #technical-skills .heading-amp {
+    margin: 0 4px !important;
+  }
+}
+</style>
+
+
+<style id="technical-skills-heading-ornaments-restore">
+/* Restore the gold diamond + line accents on both sides of each heading, */
+/* and make the ampersand match the gold accent styling. */
+#technical-skills .section-heading {
+  position: relative !important;
+}
+
+#technical-skills .heading-primary,
+#technical-skills .heading-secondary,
+#technical-skills .heading-amp {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+#technical-skills .heading-primary,
+#technical-skills .heading-secondary {
+  z-index: 2 !important;
+}
+
+#technical-skills .heading-amp {
+  color: rgba(224, 176, 96, 0.92) !important;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: clamp(20px, 1.35vw, 26px) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.22em !important;
+  line-height: 1 !important;
+  text-transform: none !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 981px) {
+  #technical-skills .section-heading {
+    grid-template-columns: minmax(0, 1fr) 78px minmax(0, 1fr) !important;
+    margin: 0 0 34px !important;
+  }
+
+  #technical-skills .heading-primary::before,
+  #technical-skills .heading-primary::after,
+  #technical-skills .heading-secondary::before,
+  #technical-skills .heading-secondary::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 96px;
+    height: 14px;
+    opacity: 0.98;
+    pointer-events: none;
+    background-repeat: no-repeat;
+  }
+
+  /* left side of heading: diamond then line */
+  #technical-skills .heading-primary::before,
+  #technical-skills .heading-secondary::before {
+    right: calc(100% + 18px);
+    background-image:
+      linear-gradient(rgba(201,150,63,.52), rgba(201,150,63,.52)),
+      linear-gradient(45deg, transparent 42%, rgba(201,150,63,.94) 42%, rgba(201,150,63,.94) 58%, transparent 58%);
+    background-size: calc(100% - 16px) 1px, 10px 10px;
+    background-position: 14px 50%, 0 50%;
+  }
+
+  /* right side of heading: line then diamond */
+  #technical-skills .heading-primary::after,
+  #technical-skills .heading-secondary::after {
+    left: calc(100% + 18px);
+    background-image:
+      linear-gradient(rgba(201,150,63,.52), rgba(201,150,63,.52)),
+      linear-gradient(45deg, transparent 42%, rgba(201,150,63,.94) 42%, rgba(201,150,63,.94) 58%, transparent 58%);
+    background-size: calc(100% - 16px) 1px, 10px 10px;
+    background-position: 0 50%, calc(100% - 1px) 50%;
+  }
+
+  /* Keep the left technical-heading ornament inside the viewport and balanced. */
+  #technical-skills .heading-primary::before {
+    width: 82px;
+    right: calc(100% + 14px);
+  }
+
+  /* Keep the two center-side ornaments a bit shorter so the & has room. */
+  #technical-skills .heading-primary::after,
+  #technical-skills .heading-secondary::before {
+    width: 54px;
+  }
+
+  /* Give the outer-right ornament a little more breathing room. */
+  #technical-skills .heading-secondary::after {
+    width: 74px;
+    left: calc(100% + 16px);
+  }
+}
+
+@media (max-width: 980px) {
+  #technical-skills .heading-primary::before,
+  #technical-skills .heading-primary::after,
+  #technical-skills .heading-secondary::before,
+  #technical-skills .heading-secondary::after {
+    display: none !important;
+  }
+
+  #technical-skills .heading-amp {
+    font-size: 0.8em !important;
+    letter-spacing: 0.16em !important;
+    margin: 0 6px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <!-- Hero layout expanded to full viewport width for desktop and ultrawide screens. -->
@@ -4408,7 +4937,7 @@
         </div>
 <h2 class="wd-title">Recent<br/>Web Designs</h2>
 <p class="wd-subtitle">Modern, responsive websites built for <span>performance, clarity,</span> and <span>results.</span></p>
-<a class="wd-view-all" href="#recent-digital-work">View All Projects</a>
+<a class="wd-view-all" href="https://github.com/Kgillio" target="_blank" rel="noopener">View More Projects</a>
 </div>
 <div class="wd-grid" id="wdGrid">
 <div class="wd-hex-row wd-hex-row--top">
@@ -4494,17 +5023,6 @@
 </div>
 </div>
 </div>
-<div class="wd-bottom-cta">
-<div class="wd-bottom-copy">
-<div aria-hidden="true" class="wd-bottom-icon">
-<svg viewBox="0 0 24 24"><path d="M4 5h16v10H4zM8 19h8M10 15v4M14 15v4"></path></svg>
-</div>
-<div>
-<div class="wd-bottom-title">More projects. More impact.</div>
-<div class="wd-bottom-text">See how design and development come together.</div>
-</div>
-</div>
-</div>
 </div>
 </section>
 </div>
@@ -4514,7 +5032,13 @@
 <section aria-labelledby="skills-title" class="skills-section">
 <div class="skills-layout">
 <div class="skills-main">
-<div class="section-heading" id="skills-title"><span>Technical Skills</span><span aria-hidden="true" class="heading-node"></span></div>
+<div class="section-heading" id="skills-title">
+<span class="heading-primary">Technical Skills</span>
+<span aria-hidden="true" class="heading-node"></span>
+<span aria-hidden="true" class="heading-bridge"></span>
+<span class="heading-amp">&amp;</span>
+<span class="heading-secondary">Software Experience</span>
+</div>
 <div class="stack">
 <article class="skill-card web">
 <div aria-label="Web development technologies" class="logo-panel">
@@ -4854,5 +5378,513 @@
     hero.classList.toggle('kg-hero-offscreen', !entries[0].isIntersecting);
   }, { rootMargin: '200px 0px 200px 0px', threshold: 0 }).observe(hero);
 })();
-</script></body>
+</script>
+<style id="recent-web-designs-reference-match-final">
+/* Final reference-match override for Recent Web Designs only */
+#recent-web-designs {
+  background: #fbf8f2 !important;
+  color: #0f1f3f !important;
+  overflow: hidden !important;
+}
+
+#recent-web-designs .wd-section {
+  position: relative !important;
+  min-height: 0 !important;
+  padding: clamp(72px, 6vw, 100px) clamp(44px, 4.2vw, 82px) 0 !important;
+  background:
+    linear-gradient(
+      180deg,
+      #fbf8f2 0%,
+      #fbf8f2 67%,
+      #f6f3ec 73%,
+      #ebebf1 79%,
+      #d6dbef 85%,
+      #acb6e0 90%,
+      #6f83c6 96%,
+      #2b458f 99%,
+      #17204a 100%
+    ) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#recent-web-designs .wd-section::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
+  background:
+    radial-gradient(circle at 22% 26%, rgba(255,255,255,0.52), transparent 26%),
+    linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.08) 36%, transparent 58%) !important;
+  background-size: auto !important;
+  background-position: center top !important;
+}
+
+#recent-web-designs .wd-section::after {
+  content: none !important;
+  display: none !important;
+}
+
+#recent-web-designs .wd-shell {
+  position: relative !important;
+  z-index: 1 !important;
+  width: min(1540px, 100%) !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: minmax(390px, 0.74fr) minmax(670px, 1.26fr) !important;
+  align-items: start !important;
+  column-gap: clamp(34px, 3.7vw, 84px) !important;
+  row-gap: 0 !important;
+}
+
+#recent-web-designs .wd-header {
+  max-width: 420px !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  margin: clamp(18px, 2.6vw, 48px) 0 0 !important;
+  justify-self: start !important;
+  text-align: left !important;
+}
+
+#recent-web-designs .wd-kicker {
+  display: block !important;
+  margin: 0 0 18px !important;
+  color: #bd8739 !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: clamp(14px, 0.85vw, 16px) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.28em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+}
+#recent-web-designs .wd-kicker svg { display: none !important; }
+
+#recent-web-designs .wd-title {
+  margin: 0 !important;
+  color: #102650 !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: clamp(88px, 7.2vw, 128px) !important;
+  font-weight: 500 !important;
+  line-height: 0.87 !important;
+  letter-spacing: -0.05em !important;
+  width: 3.2em !important;
+  max-width: 100% !important;
+}
+
+#recent-web-designs .wd-subtitle {
+  max-width: 360px !important;
+  margin: 28px 0 0 !important;
+  color: rgba(15, 31, 63, 0.62) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: clamp(20px, 1.2vw, 24px) !important;
+  font-weight: 400 !important;
+  line-height: 1.45 !important;
+}
+
+#recent-web-designs .wd-subtitle span {
+  color: #c28a37 !important;
+  font-weight: 500 !important;
+}
+
+#recent-web-designs .wd-view-all {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 192px !important;
+  min-height: 58px !important;
+  margin-top: 34px !important;
+  padding: 16px 28px !important;
+  background: linear-gradient(180deg, #0f2b55 0%, #0a1f3c 100%) !important;
+  border: 1px solid rgba(194, 143, 57, 0.58) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 8px 18px rgba(11, 28, 55, 0.18), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+  color: #ffffff !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.24em !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+}
+
+#recent-web-designs .wd-grid {
+  --hex-w: clamp(214px, 12.4vw, 286px) !important;
+  --hex-gap: clamp(12px, 0.9vw, 18px) !important;
+  position: relative !important;
+  display: block !important;
+  width: max-content !important;
+  justify-self: center !important;
+  margin: 0 auto !important;
+  padding: 10px 4px 0 !important;
+}
+
+#recent-web-designs .wd-grid::before {
+  content: none !important;
+  display: none !important;
+}
+
+#recent-web-designs .wd-hex-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: var(--hex-gap) !important;
+}
+
+#recent-web-designs .wd-hex-row--bottom {
+  margin-top: calc(var(--hex-w) * -0.245 + var(--hex-gap)) !important;
+  margin-left: calc((var(--hex-w) + var(--hex-gap)) / 2) !important;
+}
+
+#recent-web-designs .wd-card {
+  position: relative !important;
+  flex: 0 0 var(--hex-w) !important;
+  width: var(--hex-w) !important;
+  aspect-ratio: 0.866 / 1 !important;
+  padding: 10px !important;
+  overflow: visible !important;
+  background: transparent !important;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%) !important;
+  filter: drop-shadow(0 14px 18px rgba(24, 31, 56, 0.11)) !important;
+  transition: transform 180ms ease, filter 180ms ease !important;
+}
+
+#recent-web-designs .wd-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  clip-path: inherit !important;
+  background: linear-gradient(180deg, #f7f1e6 0%, #fdfaf3 45%, #efe6d6 100%) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(214, 195, 158, 0.82),
+    inset 0 0 0 7px rgba(255,255,255,0.38) !important;
+  z-index: 0 !important;
+}
+
+#recent-web-designs .wd-card:hover {
+  transform: translateY(-3px) !important;
+  filter: drop-shadow(0 16px 22px rgba(24, 31, 56, 0.14)) !important;
+}
+
+#recent-web-designs .wd-card-inner {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  clip-path: inherit !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  background:
+    radial-gradient(circle at 50% 16%, rgba(65, 80, 102, 0.20), transparent 24%),
+    linear-gradient(145deg, #162942 0%, #091626 58%, #07121f 100%) !important;
+}
+
+#recent-web-designs .wd-card-inner::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.08) 28%, rgba(0,0,0,0.26) 70%, rgba(0,0,0,0.50) 100%),
+    radial-gradient(circle at 50% 112%, rgba(220, 170, 80, 0.15), transparent 36%) !important;
+}
+
+#recent-web-designs .wd-card--burgundy .wd-card-inner {
+  background:
+    radial-gradient(circle at 50% 16%, rgba(130, 55, 72, 0.18), transparent 24%),
+    linear-gradient(145deg, #7e1628 0%, #52131f 58%, #321018 100%) !important;
+}
+
+#recent-web-designs .wd-video-wrap {
+  position: absolute !important;
+  inset: 12px 10px 14px !important;
+  width: auto !important;
+  height: auto !important;
+  clip-path: inherit !important;
+  overflow: hidden !important;
+  z-index: 0 !important;
+  background: transparent !important;
+}
+
+#recent-web-designs .wd-video-wrap::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(180deg, rgba(2, 8, 18, 0.14) 0%, rgba(2, 8, 18, 0.26) 30%, rgba(2, 8, 18, 0.58) 100%),
+    radial-gradient(circle at 50% 120%, rgba(0,0,0,0.52), transparent 36%) !important;
+}
+
+#recent-web-designs .wd-card--burgundy .wd-video-wrap::after {
+  background:
+    linear-gradient(180deg, rgba(22, 4, 8, 0.10) 0%, rgba(22, 4, 8, 0.22) 30%, rgba(22, 4, 8, 0.48) 100%),
+    radial-gradient(circle at 50% 120%, rgba(0,0,0,0.48), transparent 36%) !important;
+}
+
+#recent-web-designs .wd-video-wrap video,
+#recent-web-designs .wd-video-wrap iframe {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 0.90 !important;
+  filter: saturate(0.90) brightness(0.78) contrast(1.02) !important;
+  transform: scale(1.02) !important;
+}
+
+#recent-web-designs .wd-video-wrap.playing video,
+#recent-web-designs .wd-video-wrap.playing iframe {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: scale(1) !important;
+}
+
+#recent-web-designs .wd-card-number {
+  top: 11.5% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 4 !important;
+  color: #d5a24d !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: clamp(22px, 1.55vw, 32px) !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+}
+
+#recent-web-designs .wd-card-body {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 3 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 26% 13% 25% !important;
+  text-align: center !important;
+  pointer-events: none !important;
+}
+
+#recent-web-designs .wd-card-kicker {
+  margin: 0 0 13px !important;
+  color: rgba(217, 171, 88, 0.86) !important;
+  font-size: clamp(8px, 0.48vw, 10px) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.24em !important;
+  line-height: 1.35 !important;
+  text-transform: uppercase !important;
+}
+#recent-web-designs .wd-card-kicker svg { display: none !important; }
+
+#recent-web-designs .wd-card-title {
+  max-width: 90% !important;
+  margin: 0 auto !important;
+  color: #ffffff !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: clamp(16px, 1.12vw, 22px) !important;
+  font-weight: 400 !important;
+  line-height: 1.28 !important;
+  letter-spacing: -0.02em !important;
+  text-wrap: balance !important;
+}
+
+#recent-web-designs .wd-play-badge {
+  display: none !important;
+}
+
+#recent-web-designs .wd-bottom-cta {
+  display: flex !important;
+  position: relative !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  margin: clamp(36px, 4vw, 48px) auto 0 !important;
+  padding: 0 clamp(12px, 3vw, 24px) clamp(56px, 5vw, 72px) !important;
+  justify-content: center !important;
+}
+
+#recent-web-designs .wd-bottom-copy {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 18px !important;
+}
+
+#recent-web-designs .wd-bottom-icon {
+  width: 74px !important;
+  height: 74px !important;
+  flex: 0 0 74px !important;
+  border: 1.5px solid rgba(214, 167, 83, 0.82) !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  background: rgba(255,255,255,0.05) !important;
+}
+
+#recent-web-designs .wd-bottom-icon svg {
+  width: 28px !important;
+  height: 28px !important;
+  stroke: #d6a553 !important;
+  stroke-width: 1.55 !important;
+  fill: none !important;
+}
+
+#recent-web-designs .wd-bottom-title {
+  margin: 0 !important;
+  color: rgba(255,255,255,0.92) !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: clamp(38px, 2.4vw, 58px) !important;
+  font-weight: 500 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.025em !important;
+}
+
+#recent-web-designs .wd-bottom-text {
+  margin-top: 6px !important;
+  color: rgba(255,255,255,0.92) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: clamp(18px, 1.25vw, 28px) !important;
+  font-weight: 400 !important;
+  line-height: 1.34 !important;
+}
+
+@media (max-width: 1180px) {
+  #recent-web-designs .wd-section {
+    padding-top: 60px !important;
+  }
+  #recent-web-designs .wd-shell {
+    grid-template-columns: 1fr !important;
+    row-gap: 42px !important;
+  }
+  #recent-web-designs .wd-header {
+    max-width: 620px !important;
+    margin-top: 0 !important;
+  }
+  #recent-web-designs .wd-title {
+    width: auto !important;
+    font-size: clamp(72px, 12vw, 104px) !important;
+  }
+  #recent-web-designs .wd-subtitle {
+    max-width: 520px !important;
+  }
+  #recent-web-designs .wd-grid {
+    justify-self: center !important;
+    padding-top: 0 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  #recent-web-designs .wd-grid {
+    --hex-w: min(39vw, 240px) !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, var(--hex-w)) !important;
+    width: 100% !important;
+    justify-content: center !important;
+    gap: 16px 14px !important;
+  }
+  #recent-web-designs .wd-hex-row {
+    display: contents !important;
+  }
+  #recent-web-designs .wd-hex-row--bottom {
+    margin: 0 !important;
+  }
+  #recent-web-designs .wd-bottom-copy {
+    text-align: center !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 620px) {
+  #recent-web-designs .wd-section {
+    padding: 52px 18px 0 !important;
+  }
+  #recent-web-designs .wd-kicker {
+    font-size: 12px !important;
+  }
+  #recent-web-designs .wd-title {
+    font-size: clamp(58px, 18vw, 84px) !important;
+  }
+  #recent-web-designs .wd-subtitle {
+    font-size: 17px !important;
+  }
+  #recent-web-designs .wd-view-all {
+    min-width: 176px !important;
+    min-height: 50px !important;
+  }
+  #recent-web-designs .wd-grid {
+    --hex-w: min(84vw, 286px) !important;
+    grid-template-columns: var(--hex-w) !important;
+  }
+  #recent-web-designs .wd-bottom-copy {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  #recent-web-designs .wd-bottom-title {
+    font-size: clamp(34px, 9vw, 46px) !important;
+    text-align: center !important;
+  }
+  #recent-web-designs .wd-bottom-text {
+    font-size: 18px !important;
+    text-align: center !important;
+  }
+}
+</style>
+
+
+<style id="recent-web-designs-remove-light-blue-band">
+/* Remove the icy light-blue band while preserving the existing layout. */
+#recent-web-designs .wd-section {
+  background: linear-gradient(
+    180deg,
+    #fbf8f2 0%,
+    #fbf8f2 72%,
+    #f6f1e9 77%,
+    #d8d0c6 82%,
+    #6978a4 88%,
+    #3d4f88 94%,
+    #253872 97.5%,
+    #17204a 100%
+  ) !important;
+}
+
+#recent-web-designs .wd-section::before {
+  background:
+    radial-gradient(circle at 22% 26%, rgba(255,255,255,0.38), transparent 26%),
+    linear-gradient(180deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.04) 38%, transparent 60%) !important;
+}
+</style>
+
+
+<style id="recent-web-designs-zero-light-blue-final">
+/* Final handoff: warm cream and neutral shadow tones only before deep navy. */
+#recent-web-designs .wd-section {
+  background: linear-gradient(
+    180deg,
+    #fbf8f2 0%,
+    #fbf8f2 73%,
+    #f5f0e8 78%,
+    #e8e0d5 83%,
+    #c9c0b5 87%,
+    #807b7b 91%,
+    #3b3d4d 95%,
+    #232a49 98%,
+    #17204a 100%
+  ) !important;
+}
+
+#recent-web-designs .wd-section::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+#recent-web-designs .wd-section::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+</style>
+
+</body>
 </html>
