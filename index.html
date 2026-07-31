@@ -1579,7 +1579,31 @@
 #recent-web-designs .wd-card-body { contain: layout paint; }
 #recent-web-designs .wd-card { transform: translateZ(0); backface-visibility: hidden; }
 #recent-web-designs .wd-play-badge-inner { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: rgba(9,19,47,.72) !important; }
-</style><style id="technical-skills-styles">
+</style>
+<style id="recent-web-designs-no-fog-override">
+#recent-web-designs .wd-section{
+  background:
+    linear-gradient(180deg,
+      #fcfbf8 0%,
+      #fbf9f4 38%,
+      #f5efe5 56%,
+      #e7e5e6 70%,
+      #ccd2e6 82%,
+      #8190cf 91%,
+      #334796 97%,
+      #17204a 100%) !important;
+}
+#recent-web-designs .wd-section::after{
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+#recent-web-designs .wd-bottom-cta{
+  position: relative;
+  z-index: 2;
+}
+</style>
+<style id="technical-skills-styles">
   #technical-skills{
     --bg-1:#030817;
     --bg-2:#07132e;
@@ -2870,6 +2894,420 @@
   z-index: 20;
 }
 </style>
+
+<style id="kg-hex-web-to-skills-smooth-transition">
+/* Smooth cream-to-blue-to-navy handoff beneath the playable honeycomb videos. */
+#recent-web-designs {
+  background: #17204a !important;
+}
+
+/* The entire section is one continuous linear background. */
+#recent-web-designs .wd-section {
+  position: relative !important;
+  padding-bottom: clamp(210px, 14vw, 275px) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: linear-gradient(
+    180deg,
+    #fbf8f2 0%,
+    #fbf8f2 46%,
+    #f7f3ed 51%,
+    #d8dced 58%,
+    #8c99ce 68%,
+    #40569a 82%,
+    #17204a 100%
+  ) !important;
+}
+
+/* Grid only: no color veil, fog, glow, wave, divider, or horizon line. */
+#recent-web-designs .wd-section::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 55% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px) !important;
+  background-size: 54px 54px !important;
+  background-position: 0 0 !important;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.10) 13%,
+    rgba(0, 0, 0, 0.54) 36%,
+    rgba(0, 0, 0, 0.82) 66%,
+    #000 100%
+  ) !important;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.10) 13%,
+    rgba(0, 0, 0, 0.54) 36%,
+    rgba(0, 0, 0, 0.82) 66%,
+    #000 100%
+  ) !important;
+}
+
+#recent-web-designs .wd-shell {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Center copy inside the blue handoff area. */
+#recent-web-designs .wd-bottom-cta {
+  position: relative !important;
+  z-index: 2 !important;
+  grid-column: 1 / -1 !important;
+  width: min(760px, 100%) !important;
+  margin: clamp(52px, 4.5vw, 72px) auto 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #fff !important;
+}
+
+#recent-web-designs .wd-bottom-copy {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 18px !important;
+}
+
+#recent-web-designs .wd-bottom-icon {
+  width: 68px !important;
+  height: 68px !important;
+  flex: 0 0 68px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1.5px solid rgba(230, 194, 114, 0.95) !important;
+  border-radius: 50% !important;
+  background: rgba(23, 32, 74, 0.12) !important;
+  box-shadow: none !important;
+  color: #f0d28a !important;
+}
+
+#recent-web-designs .wd-bottom-icon svg {
+  width: 27px !important;
+  height: 27px !important;
+  display: block !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+#recent-web-designs .wd-bottom-title {
+  margin: 0 0 5px !important;
+  color: rgba(255, 255, 255, 0.97) !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  line-height: 1.1 !important;
+  text-shadow: 0 1px 10px rgba(13, 24, 65, 0.18) !important;
+}
+
+#recent-web-designs .wd-bottom-text {
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+  text-shadow: 0 1px 8px rgba(13, 24, 65, 0.15) !important;
+}
+
+/* Exact color match at the section boundary, then the skills background darkens. */
+#technical-skills {
+  margin-top: -1px !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: linear-gradient(
+    180deg,
+    #17204a 0%,
+    #17204a 10%,
+    #141b40 32%,
+    #101633 62%,
+    #0d1230 100%
+  ) !important;
+}
+
+#technical-skills::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 1080px) {
+  #recent-web-designs .wd-section {
+    padding-bottom: clamp(200px, 23vw, 260px) !important;
+    background: linear-gradient(
+      180deg,
+      #fbf8f2 0%,
+      #fbf8f2 62%,
+      #f7f3ed 68%,
+      #d8dced 76%,
+      #8c99ce 84%,
+      #40569a 92%,
+      #17204a 100%
+    ) !important;
+  }
+
+  #recent-web-designs .wd-section::after {
+    height: 39% !important;
+  }
+
+  #recent-web-designs .wd-bottom-cta {
+    margin-top: 58px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  #recent-web-designs .wd-section {
+    padding-bottom: 215px !important;
+    background: linear-gradient(
+      180deg,
+      #fbf8f2 0%,
+      #fbf8f2 76%,
+      #f7f3ed 81%,
+      #d8dced 87%,
+      #8c99ce 92%,
+      #40569a 96%,
+      #17204a 100%
+    ) !important;
+  }
+
+  #recent-web-designs .wd-section::after {
+    height: 27% !important;
+    background-size: 44px 44px !important;
+  }
+
+  #recent-web-designs .wd-bottom-cta {
+    width: 100% !important;
+    margin-top: 54px !important;
+    padding: 0 8px !important;
+  }
+
+  #recent-web-designs .wd-bottom-copy {
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  #recent-web-designs .wd-bottom-icon {
+    width: 58px !important;
+    height: 58px !important;
+    flex-basis: 58px !important;
+  }
+
+  #recent-web-designs .wd-bottom-title {
+    font-size: 21px !important;
+  }
+
+  #recent-web-designs .wd-bottom-text {
+    font-size: 13px !important;
+  }
+}
+</style>
+
+
+<style id="kg-compact-web-to-skills-spacing">
+/* Compact the handoff while preserving the same continuous cream-to-navy blend. */
+#recent-web-designs .wd-shell {
+  row-gap: 0 !important;
+}
+
+#recent-web-designs .wd-section {
+  padding-bottom: clamp(96px, 6vw, 120px) !important;
+  background: linear-gradient(
+    180deg,
+    #fbf8f2 0%,
+    #fbf8f2 58%,
+    #f7f3ed 65%,
+    #d8dced 72%,
+    #8c99ce 82%,
+    #40569a 91%,
+    #17204a 100%
+  ) !important;
+}
+
+#recent-web-designs .wd-bottom-cta {
+  margin-top: clamp(30px, 2.3vw, 42px) !important;
+}
+
+#recent-web-designs .wd-section::after {
+  height: 42% !important;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.08) 18%,
+    rgba(0, 0, 0, 0.48) 48%,
+    rgba(0, 0, 0, 0.82) 76%,
+    #000 100%
+  ) !important;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.08) 18%,
+    rgba(0, 0, 0, 0.48) 48%,
+    rgba(0, 0, 0, 0.82) 76%,
+    #000 100%
+  ) !important;
+}
+
+@media (max-width: 1080px) {
+  #recent-web-designs .wd-shell {
+    row-gap: 0 !important;
+  }
+
+  #recent-web-designs .wd-grid {
+    margin-top: 48px !important;
+  }
+
+  #recent-web-designs .wd-section {
+    padding-bottom: 108px !important;
+    background: linear-gradient(
+      180deg,
+      #fbf8f2 0%,
+      #fbf8f2 68%,
+      #f7f3ed 74%,
+      #d8dced 81%,
+      #8c99ce 88%,
+      #40569a 94%,
+      #17204a 100%
+    ) !important;
+  }
+
+  #recent-web-designs .wd-bottom-cta {
+    margin-top: 34px !important;
+  }
+
+  #recent-web-designs .wd-section::after {
+    height: 30% !important;
+  }
+}
+
+@media (max-width: 620px) {
+  #recent-web-designs .wd-grid {
+    margin-top: 40px !important;
+  }
+
+  #recent-web-designs .wd-section {
+    padding-bottom: 96px !important;
+    background: linear-gradient(
+      180deg,
+      #fbf8f2 0%,
+      #fbf8f2 80%,
+      #f7f3ed 84%,
+      #d8dced 88%,
+      #8c99ce 93%,
+      #40569a 97%,
+      #17204a 100%
+    ) !important;
+  }
+
+  #recent-web-designs .wd-bottom-cta {
+    margin-top: 28px !important;
+  }
+
+  #recent-web-designs .wd-section::after {
+    height: 20% !important;
+  }
+}
+</style>
+
+<style id="kg-recent-web-designs-larger-content">
+/* Scale the existing Recent Web Designs composition up and anchor its copy to the page edge. */
+@media (min-width: 1081px) {
+  #recent-web-designs .wd-section {
+    padding-left: clamp(34px, 2.5vw, 58px) !important;
+    padding-right: clamp(34px, 2.5vw, 58px) !important;
+  }
+
+  #recent-web-designs .wd-shell {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    grid-template-columns: minmax(590px, 0.85fr) minmax(720px, 1.15fr) !important;
+    gap: clamp(24px, 2vw, 42px) !important;
+  }
+
+  #recent-web-designs .wd-header {
+    width: 100% !important;
+    max-width: 590px !important;
+    padding-left: 0 !important;
+    justify-self: start !important;
+  }
+
+  #recent-web-designs .wd-kicker {
+    margin-bottom: 18px !important;
+    font-size: clamp(14px, 0.72vw, 18px) !important;
+    letter-spacing: 0.22em !important;
+  }
+
+  #recent-web-designs .wd-title {
+    width: 3.65em !important;
+    max-width: 100% !important;
+    font-size: clamp(94px, 5.5vw, 124px) !important;
+    line-height: 0.88 !important;
+    letter-spacing: -0.05em !important;
+  }
+
+  #recent-web-designs .wd-subtitle {
+    max-width: 560px !important;
+    margin-top: 28px !important;
+    font-size: clamp(20px, 1.12vw, 27px) !important;
+    line-height: 1.42 !important;
+  }
+
+  #recent-web-designs .wd-view-all {
+    min-width: 214px !important;
+    min-height: 54px !important;
+    margin-top: 34px !important;
+    padding: 15px 28px !important;
+    font-size: 11px !important;
+  }
+
+  #recent-web-designs .wd-grid {
+    --hex-w: clamp(206px, 10.7vw, 270px) !important;
+    justify-self: start !important;
+    padding-left: 0 !important;
+  }
+
+  #recent-web-designs .wd-bottom-cta {
+    width: min(1120px, 100%) !important;
+  }
+
+  #recent-web-designs .wd-bottom-icon {
+    width: 78px !important;
+    height: 78px !important;
+    flex-basis: 78px !important;
+  }
+
+  #recent-web-designs .wd-bottom-icon svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  #recent-web-designs .wd-bottom-title {
+    font-size: clamp(40px, 2.15vw, 48px) !important;
+    line-height: 1.05 !important;
+  }
+
+  #recent-web-designs .wd-bottom-text {
+    font-size: clamp(24px, 1.35vw, 30px) !important;
+    line-height: 1.3 !important;
+  }
+}
+</style>
 </head>
 <body>
 <!-- Hero layout expanded to full viewport width for desktop and ultrawide screens. -->
@@ -3805,8 +4243,8 @@
 <div class="pc-price-row"><span class="pc-from">view</span><span class="pc-price">Project</span></div>
 </div>
 </div>
-<!-- Card 5 — active (middle of 9) -->
-<div class="pc-card pc-active" data-pc="4" onclick="pcCardClick(4)">
+<!-- Card 5 -->
+<div class="pc-card" data-pc="4" onclick="pcCardClick(4)">
 <div class="pc-card-img">
 <img alt="Saafco" decoding="async" loading="lazy" src="assets/2026/03/saafco.png" style="width:100%;height:100%;object-fit:cover;display:block;"/>
 </div>
@@ -3836,8 +4274,8 @@
 <div class="pc-price-row"><span class="pc-from">view</span><span class="pc-price">Project</span></div>
 </div>
 </div>
-<!-- Card 7 -->
-<div class="pc-card" data-pc="6" onclick="pcCardClick(6)">
+<!-- Card 7 — default active center card -->
+<div class="pc-card pc-active" data-pc="6" onclick="pcCardClick(6)">
 <div class="pc-card-img">
 <img alt="Acco GBC" decoding="async" loading="lazy" src="assets/2026/03/acco-gbc.png" style="width:100%;height:100%;object-fit:cover;display:block;"/>
 </div>
@@ -4056,6 +4494,17 @@
 </div>
 </div>
 </div>
+<div class="wd-bottom-cta">
+<div class="wd-bottom-copy">
+<div aria-hidden="true" class="wd-bottom-icon">
+<svg viewBox="0 0 24 24"><path d="M4 5h16v10H4zM8 19h8M10 15v4M14 15v4"></path></svg>
+</div>
+<div>
+<div class="wd-bottom-title">More projects. More impact.</div>
+<div class="wd-bottom-text">See how design and development come together.</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 </div>
@@ -4121,8 +4570,8 @@
     if (cards[i]) cards[i].classList.add('pc-active');
   };
 
-  // Default featured card: Safco pedestal / marketplace card in the middle
-  window.pcSetActive(4);
+  // Default featured card: Acco GBC, the true middle card in the collection
+  window.pcSetActive(6);
 })();
 
 // ── Lightbox ──
