@@ -358,6 +358,7 @@
     .wall-stage {
       position: relative;
       width: 100%;
+      overscroll-behavior: contain;
       max-width: 840px;
       height: 640px;
       overflow: hidden;
@@ -5223,8 +5224,8 @@
       wall.appendChild(row);
     });
 
-    // Smooth wheel-controlled wall movement without blocking page scrolling.
-    // The page continues vertically while the image wall glides sideways.
+    // While the pointer is over the collage, the mouse wheel controls only
+    // horizontal wall movement. Outside the collage, normal page scrolling resumes.
     const wallStage = document.querySelector('.wall-stage');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -5270,15 +5271,22 @@
     }
 
     wallStage.addEventListener('wheel', (event) => {
-      // Normalize mouse wheels and trackpads without canceling normal page scroll.
-      let delta = event.deltaY;
+      // Keep the page fixed while the cursor is over the collage.
+      event.preventDefault();
+
+      // Support standard mouse wheels and two-axis trackpads. Use whichever
+      // axis carries the stronger gesture, then convert it into horizontal travel.
+      let delta = Math.abs(event.deltaX) > Math.abs(event.deltaY)
+        ? event.deltaX
+        : event.deltaY;
+
       if (event.deltaMode === 1) delta *= 16;
       if (event.deltaMode === 2) delta *= window.innerHeight;
 
       wallTargetX -= delta * 0.42;
       wallTargetX = Math.max(wallMinX, Math.min(0, wallTargetX));
       requestWallRender();
-    }, { passive: true });
+    }, { passive: false });
 
     // Recalculate after images settle and whenever the viewport changes.
     Promise.all(
