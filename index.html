@@ -5894,5 +5894,360 @@
 }
 </style>
 
+<style id="kg-mobile-layout-final">
+/* =========================================================
+   MOBILE-ONLY LAYOUT PASS
+   Desktop/tablet styles above 700px remain unchanged.
+   ========================================================= */
+@media (max-width: 700px) {
+  html,
+  body,
+  .page-root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* ---------- Hero: keep all copy and buttons inside the phone ---------- */
+  .hero {
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .hero-inner {
+    min-height: auto;
+    padding-top: 38px;
+    padding-right: max(18px, env(safe-area-inset-right));
+    padding-bottom: 46px;
+    padding-left: max(18px, env(safe-area-inset-left));
+    gap: 30px;
+  }
+
+  .copy {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-block: 0;
+  }
+
+  .eyebrow {
+    max-width: 100%;
+    margin-bottom: 18px;
+    font-size: 0.70rem;
+    line-height: 1.55;
+    letter-spacing: 0.24em;
+    overflow-wrap: anywhere;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(3.35rem, 15.5vw, 4.65rem);
+    line-height: 0.89;
+    letter-spacing: -0.052em;
+  }
+
+  .intro {
+    margin-top: 24px;
+    max-width: 100%;
+    font-size: 0.98rem;
+    line-height: 1.62;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .button,
+  .button.secondary {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 52px;
+    padding: 0 14px;
+    flex: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    white-space: nowrap;
+  }
+
+  .stats {
+    margin-top: 40px;
+  }
+
+  .stat-label {
+    max-width: 100%;
+    padding-right: 4px;
+    overflow-wrap: anywhere;
+  }
+
+  /* ---------- Hero image wall: show every image as a clean mobile grid ---------- */
+  .visual,
+  .visual-image-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .visual-image-wrap {
+    padding: 0;
+    overflow: visible;
+  }
+
+  .wall-stage {
+    width: 100%;
+    max-width: none;
+    height: auto !important;
+    overflow: visible;
+    perspective: none;
+    border-radius: 0;
+    contain: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .wall-stage #wall {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    cursor: default;
+  }
+
+  .wall-stage #wall .row,
+  .wall-stage #wall .row .frame {
+    display: contents !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  .wall-stage #wall .row > img,
+  .wall-stage #wall .row .frame > img {
+    width: 100% !important;
+    height: 78px !important;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 3px;
+    object-fit: contain;
+    border: 1px solid rgba(212, 160, 79, 0.16);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.035);
+  }
+
+  .wall-stage #wall .row .frame .reflection,
+  .wall-stage #wall .row .wall-reflection,
+  .wall-stage #wall .row .frame::after {
+    display: none !important;
+  }
+
+  /* ---------- Digital work: turn the cropped carousel into a full-image gallery ---------- */
+  #recent-digital-work,
+  #recent-digital-work .pg-root {
+    overflow: visible;
+  }
+
+  #recent-digital-work .pg-carousel-section {
+    --pc-radius: 16px;
+    padding: 68px 0 88px;
+    overflow: visible;
+  }
+
+  #recent-digital-work .pg-carousel-header {
+    width: 100%;
+    margin-bottom: 32px;
+    padding: 0 18px;
+  }
+
+  #recent-digital-work .pg-carousel-title {
+    max-width: 100%;
+    font-size: clamp(35px, 11vw, 48px);
+    line-height: 0.98;
+    letter-spacing: 0.13em;
+  }
+
+  #recent-digital-work .pg-carousel-rule {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  #recent-digital-work .pg-carousel-rule span {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+  }
+
+  #recent-digital-work .pc-wrap {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    margin: 0;
+    padding: 0 14px !important;
+    overflow: visible !important;
+  }
+
+  #recent-digital-work .pc-track {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    justify-content: stretch;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0 !important;
+    gap: 12px !important;
+    overflow: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    touch-action: pan-y;
+  }
+
+  #recent-digital-work .pc-card,
+  #recent-digital-work .pc-card.pc-active {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3 / 4;
+    flex: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    border-radius: var(--pc-radius);
+    scroll-snap-align: none;
+  }
+
+  #recent-digital-work .pc-card:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 6px) !important;
+    justify-self: center;
+  }
+
+  #recent-digital-work .pc-card-img,
+  #recent-digital-work .pc-card.pc-active .pc-card-img {
+    transform: none !important;
+    filter: none !important;
+    background: #f3f1ec;
+  }
+
+  #recent-digital-work .pc-card-img img {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 4px;
+    object-fit: contain !important;
+    background: #f3f1ec;
+  }
+
+  #recent-digital-work .pc-card-overlay,
+  #recent-digital-work .pc-card.pc-active .pc-card-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(3, 7, 15, 0) 0%,
+      rgba(3, 7, 15, 0) 70%,
+      rgba(3, 7, 15, 0.86) 100%
+    ) !important;
+  }
+
+  #recent-digital-work .pc-card-vlabel {
+    display: none !important;
+  }
+
+  #recent-digital-work .pc-card-info,
+  #recent-digital-work .pc-card.pc-active .pc-card-info {
+    padding: 10px 10px 12px !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #recent-digital-work .pc-card-info .pc-name {
+    margin-bottom: 2px;
+    font-size: 14px !important;
+    line-height: 1.05;
+  }
+
+  #recent-digital-work .pc-card-info .pc-sub {
+    margin: 0;
+    font-size: 7.5px !important;
+    line-height: 1.25;
+    letter-spacing: 0.12em;
+  }
+
+  /* ---------- Full-screen viewer: show the complete flyer instead of cropping it ---------- */
+  #recent-digital-work .pc-lightbox {
+    padding-top: max(14px, env(safe-area-inset-top));
+    padding-right: max(14px, env(safe-area-inset-right));
+    padding-bottom: max(14px, env(safe-area-inset-bottom));
+    padding-left: max(14px, env(safe-area-inset-left));
+  }
+
+  #recent-digital-work .pc-lightbox-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 94vw;
+    max-height: 90dvh;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #0b0d13;
+  }
+
+  #recent-digital-work .pc-lightbox-inner img {
+    width: 100%;
+    height: auto;
+    max-height: 76dvh;
+    object-fit: contain;
+    background: #f3f1ec;
+  }
+
+  #recent-digital-work .pc-lightbox-label {
+    position: relative;
+    inset: auto;
+    flex: 0 0 auto;
+    padding: 12px 14px 14px;
+    background: #0b0d13;
+  }
+
+  #recent-digital-work .pc-lightbox-close {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 370px) {
+  .hero h1 {
+    font-size: clamp(3rem, 15vw, 3.55rem);
+  }
+
+  .button,
+  .button.secondary {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+
+  .wall-stage #wall {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #recent-digital-work .pc-track {
+    grid-template-columns: 1fr;
+  }
+
+  #recent-digital-work .pc-card:last-child {
+    grid-column: auto;
+    width: 100% !important;
+  }
+}
+</style>
+
+
 </body>
 </html>
