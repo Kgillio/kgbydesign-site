@@ -5024,6 +5024,29 @@
 </div>
 </div>
 </div>
+
+<!-- ══ SCREENFLEX FEATURED BUILD ══ -->
+<div class="wd-feature-column">
+  <div class="wd-showcase-title">Showcase</div>
+  <article class="wd-feature-card" aria-labelledby="screenflex-feature-title">
+    <div class="wd-feature-heading">
+      <span class="wd-feature-number">07</span>
+      <span class="wd-feature-label">Featured Build</span>
+    </div>
+    <div class="wd-feature-video">
+      <video controls="" muted="" playsinline="" preload="metadata" poster="assets/2026/03/screenflex-poster.jpg" aria-label="Screenflex interactive product gallery demonstration">
+        <source src="assets/2026/03/screenflex-web.mp4" type="video/mp4"/>
+        Your browser does not support HTML video.
+      </video>
+    </div>
+    <div class="wd-feature-copy">
+      <div class="wd-feature-kicker">Interactive Product Showcase</div>
+      <h3 id="screenflex-feature-title">Screenflex Product Gallery</h3>
+      <p>Responsive product exploration and visual merchandising experience.</p>
+    </div>
+  </article>
+</div>
+<!-- ══ END SCREENFLEX FEATURED BUILD ══ -->
 </div>
 </section>
 </div>
@@ -6248,6 +6271,220 @@
 }
 </style>
 
+
+
+<style id="screenflex-featured-build-styles">
+/* =========================================================
+   SCREENFLEX FEATURED BUILD
+   Adds a wide-format project video to the open right column.
+   ========================================================= */
+#recent-web-designs .wd-feature-column {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 420px !important;
+  align-self: start !important;
+  justify-self: center !important;
+  margin: -4px 0 0 !important;
+}
+
+#recent-web-designs .wd-showcase-title {
+  margin: 0 0 14px !important;
+  color: #102650 !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: clamp(40px, 2.7vw, 54px) !important;
+  font-weight: 500 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.035em !important;
+  text-align: center !important;
+}
+
+#recent-web-designs .wd-feature-card {
+  position: relative !important;
+  width: 100% !important;
+  max-width: none !important;
+  align-self: start !important;
+  justify-self: center !important;
+  margin: 0 !important;
+  padding: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(194, 143, 57, 0.68) !important;
+  border-radius: 20px !important;
+  background:
+    radial-gradient(circle at 82% 8%, rgba(212, 160, 79, 0.18), transparent 36%),
+    linear-gradient(145deg, #142947 0%, #09192d 56%, #071421 100%) !important;
+  box-shadow:
+    0 22px 46px rgba(31, 40, 66, 0.17),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  transition: transform 180ms ease, box-shadow 180ms ease !important;
+}
+
+#recent-web-designs .wd-feature-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow:
+    0 26px 52px rgba(31, 40, 66, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+}
+
+#recent-web-designs .wd-feature-heading {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 5px 5px 11px !important;
+}
+
+#recent-web-designs .wd-feature-number {
+  color: #d7a34d !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: 27px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+}
+
+#recent-web-designs .wd-feature-label {
+  color: rgba(222, 179, 100, 0.82) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+}
+
+#recent-web-designs .wd-feature-video {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 1280 / 632 !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 12px !important;
+  background: #171411 !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.025) !important;
+}
+
+#recent-web-designs .wd-feature-video video {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: contain !important;
+  background: #171411 !important;
+}
+
+#recent-web-designs .wd-feature-copy {
+  padding: 18px 8px 10px !important;
+}
+
+#recent-web-designs .wd-feature-kicker {
+  margin: 0 0 8px !important;
+  color: rgba(215, 166, 79, 0.90) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 8px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.20em !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+}
+
+#recent-web-designs .wd-feature-copy h3 {
+  margin: 0 !important;
+  color: #ffffff !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: 28px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.025em !important;
+}
+
+#recent-web-designs .wd-feature-copy p {
+  margin: 10px 0 0 !important;
+  color: rgba(226, 231, 240, 0.68) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+}
+
+/* Desktop: title, honeycomb, then Screenflex in the open right side. */
+@media (min-width: 1500px) {
+  #recent-web-designs .wd-shell {
+    width: min(1900px, 100%) !important;
+    max-width: none !important;
+    grid-template-columns:
+      minmax(340px, 400px)
+      max-content
+      minmax(370px, 420px) !important;
+    column-gap: clamp(24px, 2vw, 42px) !important;
+    align-items: start !important;
+  }
+
+  #recent-web-designs .wd-header {
+    justify-self: start !important;
+  }
+
+  #recent-web-designs .wd-grid {
+    justify-self: start !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Standard laptop: place it beneath the honeycomb without shrinking the video. */
+@media (min-width: 1181px) and (max-width: 1499px) {
+  #recent-web-designs .wd-feature-column {
+    grid-column: 2 !important;
+    width: min(760px, 100%) !important;
+    max-width: 760px !important;
+    margin: 28px auto 0 !important;
+  }
+
+  #recent-web-designs .wd-feature-card {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* Tablet and mobile: full-width stacked card. */
+@media (max-width: 1180px) {
+  #recent-web-designs .wd-feature-column {
+    width: min(720px, 100%) !important;
+    max-width: 720px !important;
+    margin: 0 auto !important;
+  }
+
+  #recent-web-designs .wd-feature-card {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  #recent-web-designs .wd-feature-column {
+    width: 100% !important;
+    max-width: 520px !important;
+    margin-top: 20px !important;
+  }
+
+  #recent-web-designs .wd-showcase-title {
+    margin-bottom: 12px !important;
+    font-size: 42px !important;
+  }
+
+  #recent-web-designs .wd-feature-card {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 10px !important;
+    border-radius: 17px !important;
+  }
+
+  #recent-web-designs .wd-feature-copy h3 {
+    font-size: 25px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #recent-web-designs .wd-feature-card {
+    transition: none !important;
+  }
+}
+</style>
 
 </body>
 </html>
