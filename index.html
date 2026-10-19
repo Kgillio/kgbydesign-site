@@ -3838,6 +3838,174 @@
 }
 </style>
 
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style id="kg-brick-wall-only">
+
+    .kg-webshowcase, .kg-webshowcase * { box-sizing: border-box; }
+    .kg-webshowcase {
+      --navy: #061e3b; --navy-dark: #05162d; --ink: #092144; --gold: #b88135;
+      --cream: #fbf8f2; --gray: #60718b; --line: rgba(161, 128, 84, .25);
+      font-family: 'DM Sans', Arial, sans-serif; color: var(--ink);
+      position: relative; overflow: hidden; isolation: isolate; width: 100%;
+      background: radial-gradient(ellipse at 64% 55%, rgba(241,226,209,.35), transparent 62%),
+                  linear-gradient(150deg, #fffdfa 0%, #fcfaf6 50%, #f8f2e9 100%);
+      padding: clamp(34px, 3.7vw, 66px) clamp(18px, 2.7vw, 52px) 112px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .kg-webshowcase::before {
+      content: ''; position: absolute; inset: auto auto 26px -130px; width: 680px; height: 370px;
+      border: 1px solid rgba(194,154,90,.23); border-radius: 50%; transform: rotate(-13deg);
+      pointer-events: none; z-index: -1;
+    }
+    .kg-webshowcase::after {
+      content: ''; position:absolute; left:0; bottom:0; width:100%; height: 85px;
+      background:linear-gradient(to bottom,transparent,rgba(13,27,53,.16) 58%,#101d39 100%);
+      pointer-events:none; z-index:3;
+    }
+    .kgws-layout { max-width: 1800px; margin: 0 auto; display: grid;
+      grid-template-columns: minmax(250px, 290px) minmax(0, 1fr) minmax(305px, 380px);
+      align-items: start; column-gap: 8px; }
+    .kgws-intro { padding-top: 39px; padding-right: 22px; position: relative; z-index:2; }
+    .kgws-eyebrow { display:flex; align-items:center; gap: 18px; white-space:nowrap;
+      letter-spacing: .34em; font-size: 12px; font-weight: 700; color:#b6772d; margin: 0 0 22px; }
+    .kgws-eyebrow::after { content:''; width:60px; border-top:1px solid #d7bc91; opacity: .75; }
+    .kgws-intro h2 { font-family: 'Playfair Display', Georgia, serif;
+      font-weight:400; font-size: clamp(54px, 5.4vw, 91px); line-height:.98; letter-spacing:-.062em;
+      margin:0 0 29px; color:#081f42; }
+    .kgws-intro p { font-family: 'Manrope', sans-serif; font-size:clamp(14px, 1.08vw,18px);
+      font-weight:400; line-height:1.62; color:#697f98; max-width:285px; margin:0 0 25px; }
+    .kgws-intro p em { font-style:normal; color:#b77b32; }
+    .kgws-cta { font-family: 'DM Sans',sans-serif; font-size: 10px; font-weight:700; letter-spacing:.14em;
+      display:flex; justify-content:space-between; align-items:center; gap:16px; width: min(100%, 256px);
+      min-height:55px; padding: 14px 22px; color:white; background:linear-gradient(#102d51,#071d39);
+      border:1px solid #ac864d; border-radius:5px; cursor:pointer; box-shadow: 0 5px 12px rgba(18,38,66,.10);
+      transition:transform .2s,background .2s,box-shadow .2s; }
+    .kgws-cta:hover { transform: translateY(-2px); box-shadow:0 9px 22px rgba(18,38,66,.17); }
+    .kgws-cta:focus-visible, .kgws-tile:focus-visible, .kgws-feature-action:focus-visible,
+    .kgws-close:focus-visible, .kgws-gallery-nav button:focus-visible { outline:3px solid #daaa62; outline-offset:4px; }
+    .kgws-cta span:last-child { font-size:18px; font-weight:400; color:#e8bb68; letter-spacing:0; }
+
+    .kgws-wall { min-width:0; display:flex; flex-direction:column; gap:4px; position:relative; z-index:2; }
+    .kgws-row { display:grid; gap:4px; min-width:0; }
+    .kgws-row:nth-child(1) { grid-template-columns: 1.07fr .93fr; height:250px; margin-left:10px; }
+    .kgws-row:nth-child(2) { grid-template-columns: .94fr 1.06fr; height:226px; margin-left:42px; }
+    .kgws-row:nth-child(3) { grid-template-columns: 1.08fr .92fr; height:210px; }
+    .kgws-tile { position:relative; display:block; width:100%; min-width:0; height:100%; padding:0;
+      border:1px solid rgba(173,139,89,.31); border-radius:6px; background:#f1ebe2;
+      cursor:pointer; overflow:hidden; text-align:left; box-shadow:0 1px 1px rgba(20,27,39,.11);
+      transition:filter .24s, box-shadow .24s; }
+    .kgws-tile::after { content:''; pointer-events:none; position:absolute; inset:0;
+      box-shadow:inset 0 0 0 3px rgba(255,255,255,.20); border-radius:inherit; }
+    .kgws-tile img { display:block; width:100%; height:100%; object-fit:cover; object-position:center top;
+      transition:transform .35s cubic-bezier(.2,.7,.2,1), filter .35s; }
+    .kgws-tile:hover img, .kgws-tile:focus-visible img { transform: scale(1.04); filter:brightness(.72); }
+    .kgws-tile-overlay { position:absolute; inset:auto 0 0; z-index:1;
+      display:flex; align-items:flex-end; justify-content:space-between; gap:10px;
+      background:linear-gradient(to top,rgba(4,17,35,.95),rgba(4,17,35,.08) 65%, rgba(4,17,35,0));
+      padding:48px 17px 14px; color:white; opacity:0; transform:translateY(7px);
+      transition:opacity .2s,transform .2s; pointer-events:none; }
+    .kgws-tile:hover .kgws-tile-overlay, .kgws-tile:focus-visible .kgws-tile-overlay { opacity:1; transform:translateY(0); }
+    .kgws-tile-name { font-family:'Manrope',sans-serif; font-weight:600; line-height:1.3; font-size:clamp(12px,1vw,15px); }
+    .kgws-tile-type { display:block; color:#dab57e; text-transform:uppercase; letter-spacing:.12em;
+      font-size:9px; margin-top:5px; }
+    .kgws-tile-arrow { color:#e7bd7e; font-size:22px; white-space:nowrap; }
+
+    .kgws-feature { position:relative; margin-left:0; padding:26px 21px 21px; z-index:2;
+      color:#fff; min-height:606px; border:1px solid #af8c53; border-radius:10px;
+      background: radial-gradient(ellipse at 100% 0%, rgba(40,70,104,.28), transparent 60%),
+                  repeating-linear-gradient(133deg,transparent 0 6px, rgba(255,255,255,.009) 6px 7px),
+                  linear-gradient(155deg,#102a49,#051a34 75%);
+      box-shadow:0 13px 25px rgba(10,25,44,.11); }
+    .kgws-feature-header { display:flex; justify-content:space-between; align-items:center; gap:10px;
+      margin-bottom:22px; }
+    .kgws-feature-label { color:#e0ab56; text-transform:uppercase; letter-spacing:.20em;
+      font-weight:700; font-size:10px; }
+    .kgws-feature-index { color:#f1e6d3; letter-spacing:.22em; font-size:13px; white-space:nowrap; }
+    .kgws-feature-preview { padding:4px; border-radius:6px; background:#eddbbd; border:1px solid #d4a95e;
+      overflow:hidden; aspect-ratio:1.58; }
+    .kgws-feature-preview img { width:100%; height:100%; object-fit:cover; border-radius:3px; display:block; object-position:center top; }
+    .kgws-feature-caption { color:#d4a14b; font-size:9px; font-weight:700; letter-spacing:.18em;
+      text-transform:uppercase; margin:29px 0 9px; }
+    .kgws-feature-content { display:flex; align-items:center; justify-content:space-between; gap:14px; }
+    .kgws-feature h3 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(21px,1.7vw,28px);
+      font-weight:400; line-height:1.2; letter-spacing:-.035em; margin:0 0 13px; }
+    .kgws-feature-desc { color:#d4dce7; font-size:12px; line-height:1.6; max-width:270px; margin:0; }
+    .kgws-feature-action { border:1px solid #cf9d58; background:transparent; color:#f3d8b4;
+      border-radius:50%; flex:0 0 42px; width:42px; height:42px;
+      display:grid; place-items:center; font-size:23px; line-height:1; cursor:pointer;
+      transition: background .2s, transform .2s; }
+    .kgws-feature-action:hover { background:rgba(218,171,94,.15); transform:translate(2px,-2px); }
+    .kgws-feature-footer { border-top:1px solid rgba(223,232,242,.21); padding-top:21px;
+      display:grid; grid-template-columns:1fr 1.65fr; margin-top:35px; }
+    .kgws-feature-footer > div + div { border-left:1px solid rgba(211,226,243,.27); padding-left:16px; }
+    .kgws-meta-label { display:block; color:#dba954; letter-spacing:.16em; font-size:9px;
+      font-weight:700; margin-bottom:11px; }
+    .kgws-meta-value { color:#ecf0f5; font-size:11px; line-height:1.8; }
+    .kgws-more { max-width:1800px; margin:35px auto 0; position:relative; z-index:2;
+      border-top:1px solid rgba(172,135,80,.32); padding-top:25px; }
+    .kgws-more[hidden] {display:none !important;}
+    .kgws-more-heading { font-family:'Playfair Display',Georgia,serif; font-size:29px; font-weight:400;
+      margin:0 0 17px; color:#081f42; }
+    .kgws-more-grid {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px;}
+    .kgws-more-item { border:1px solid rgba(159,132,87,.27); background:rgba(255,255,255,.48);
+      border-radius:5px; padding:16px; display:flex; align-items:center; justify-content:space-between;
+      gap:8px; font:600 13px 'DM Sans',sans-serif; color:#142d4a; text-align:left; cursor:pointer; }
+    .kgws-more-item:hover {background:#fff; border-color:#c19354;}
+    .kgws-more-item small {display:block; color:#7b8796; font-size:10px; font-weight:400; margin-top:5px;}
+    .kgws-more-item span:last-child {font-size:19px; color:#a67639; }
+    .kgws-modal[hidden] { display:none !important; }
+    .kgws-modal { position:fixed; inset:0; z-index:999999; background:rgba(5,15,30,.84);
+      display:flex; justify-content:center; align-items:center; padding:clamp(14px,3vw,36px); }
+    .kgws-dialog {width:min(1030px,100%); max-height: min(900px,94vh); overflow:auto;
+      background:#faf8f4; border:1px solid #d0a76c; border-radius:9px;
+      box-shadow:0 22px 75px rgba(0,0,0,.35);}
+    .kgws-modal-top { display:flex; align-items:flex-start; justify-content:space-between; gap:20px;
+      padding:20px clamp(16px,3vw,32px); }
+    .kgws-modal-kicker { color:#9d6b2d; text-transform:uppercase; font-size:10px; font-weight:700; letter-spacing:.18em; }
+    .kgws-modal-title { font:400 clamp(25px,3vw,37px)/1.25 'Playfair Display',Georgia,serif; margin:7px 0 0; color:#071f40; }
+    .kgws-close {background:transparent; color:#0c2340; border:1px solid #c7b8a0; border-radius:50%; height:39px;width:39px;font-size:23px;cursor:pointer;flex-shrink:0;}
+    .kgws-modal-image {display:block; width:calc(100% - 42px); max-height:60vh; object-fit:contain; background:#eee8de; margin:0 auto; border-radius:5px; border:1px solid #ddd0b9;}
+    .kgws-modal-bottom { display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; padding:19px 24px 23px; }
+    .kgws-modal-note { margin:0; color:#64758c; font-size:13px; line-height:1.5; max-width:550px; }
+    .kgws-gallery-nav { display:flex; gap:8px; }
+    .kgws-gallery-nav button, .kgws-live-link {padding:11px 14px; background:#081f40; color:white; border:1px solid #b58b58; border-radius:4px; cursor:pointer; font-size:12px; text-decoration:none; font-family:'DM Sans',sans-serif; white-space:nowrap; }
+    .kgws-live-link[hidden] { display:none !important; }
+    .kgws-gallery-nav button:hover, .kgws-live-link:hover { background:#173959; }
+    @media (max-width: 1350px) {
+      .kgws-layout {grid-template-columns:minmax(210px,255px) minmax(0,1fr) minmax(270px,315px);}      
+      .kgws-row:nth-child(1){height:210px;} .kgws-row:nth-child(2){height:198px;} .kgws-row:nth-child(3){height:186px;}
+      .kgws-feature {padding:20px 14px 17px; min-height:540px;}
+    }
+    @media (max-width: 1100px) {
+      .kgws-layout {grid-template-columns:minmax(205px,265px) minmax(0,1fr); column-gap:16px; row-gap:16px;}
+      .kgws-feature {grid-column:2; min-height:0; display:grid; grid-template-columns: minmax(200px,45%) 1fr; gap:0 21px;}
+      .kgws-feature-header {grid-column:1/-1; margin-bottom:14px;}
+      .kgws-feature-preview { grid-column:1; grid-row:2/5; }
+      .kgws-feature-caption {grid-column:2; margin:0 0 8px; align-self:end;}
+      .kgws-feature-content {grid-column:2;}
+      .kgws-feature-footer {grid-column:2; margin-top:22px;}
+      .kgws-row:nth-child(1){height:220px;} .kgws-row:nth-child(2){height:205px;} .kgws-row:nth-child(3){height:190px;}
+    }
+    @media (max-width: 780px) {
+      .kg-webshowcase {padding: 45px 19px 85px;}
+      .kgws-layout {display:flex; flex-direction:column; gap:27px;}
+      .kgws-intro{padding:0; width:100%;}
+      .kgws-intro h2{font-size:clamp(51px,12vw,76px); line-height:1.01; letter-spacing:-.055em; margin-bottom:17px;}
+      .kgws-intro h2 br{display:none;} .kgws-intro p{max-width:510px; font-size:16px;}
+      .kgws-row:nth-child(1){height:clamp(170px,31vw,240px);} .kgws-row:nth-child(2){height:clamp(165px,29vw,220px); margin-left:21px;} .kgws-row:nth-child(3){height:clamp(155px,27vw,200px);}      
+      .kgws-feature {width:100%; display:block; margin:0; padding:22px;} .kgws-feature-preview{width:100%; aspect-ratio:1.9;} .kgws-feature-caption{margin:20px 0 10px;} .kgws-feature-footer{margin-top:23px;}
+      .kgws-more-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    }
+    @media (max-width: 490px) {
+      .kg-webshowcase{padding:33px 12px 80px;} .kgws-intro h2{font-size:clamp(46px,12.6vw,64px);} .kgws-eyebrow::after{width:38px;}
+      .kgws-row:nth-child(1){height:155px; margin-left:5px; grid-template-columns:1fr 1fr;} .kgws-row:nth-child(2){height:150px; margin-left:15px; grid-template-columns:1fr 1fr;} .kgws-row:nth-child(3){height:140px; grid-template-columns:1fr 1fr;}
+      .kgws-more-grid{grid-template-columns:1fr;} .kgws-tile-overlay{padding:32px 8px 8px;} .kgws-tile-name{font-size:10px;} .kgws-tile-arrow{font-size:15px;}
+      .kgws-feature{padding:17px 15px;} .kgws-feature-preview{aspect-ratio:1.55;} .kgws-feature-footer{grid-template-columns:1fr 1.4fr;} .kgws-feature-footer > div + div{padding-left:13px;}
+      .kgws-modal-bottom{padding:15px;} .kgws-modal-image{width:calc(100% - 24px);}
+    }
+    @media (prefers-reduced-motion:reduce) { .kg-webshowcase *, .kg-webshowcase *::before, .kg-webshowcase *::after {animation:none !important; transition:none !important;} }
+  
+</style>
 </head>
 <body>
 <!-- Hero layout expanded to full viewport width for desktop and ultrawide screens. -->
@@ -3896,6 +4064,38 @@
             Portfolio focus: software + polished product design
           </div>
 </header>
+<style id="isg-third-card-layout">
+/* Only the software project cards are affected; other site sections stay untouched. */
+#software-projects .project-grid > .isg-transformation-card {
+  grid-column: auto;
+  width: 100%;
+  justify-self: stretch;
+}
+@media (min-width: 1081px) {
+  #software-projects .section-inner,
+  #software-projects .project-grid { max-width: 1320px; }
+  #software-projects .project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  #software-projects .project-card { padding: 24px; }
+  #software-projects .project-card h2 { font-size: clamp(31px, 2.5vw, 39px); }
+  #software-projects .project-image-placeholder {
+    right: 22px;
+    bottom: 24px;
+    width: 108px;
+    height: 82px;
+  }
+  #software-projects .project-button { padding: 9px 12px; }
+}
+/* At narrower widths, stack all three rather than leaving one orphan card. */
+@media (min-width: 861px) and (max-width: 1080px) {
+  #software-projects .project-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 620px;
+  }
+}
+</style>
 <div class="project-grid">
 <article class="project-card">
 <p class="project-type">Chess Training Platform</p>
@@ -3935,6 +4135,26 @@
 </div>
 <div aria-label="Direct Buy Search project preview" class="project-image-placeholder">
 <img alt="Direct Buy Search preview" src="assets/2026/07/directb.png"/>
+</div>
+</article>
+<article class="project-card isg-transformation-card">
+<p class="project-type">Website Transformation</p>
+<h2>ISG Website Redesign</h2>
+<p class="project-description">
+              A complete visual rethink of the ISG digital experience, with clearer
+              navigation, modern layouts, and better pathways for members and suppliers.
+            </p>
+<div aria-label="Technologies and specialties" class="project-tech">
+<span>Web Design</span>
+<span>UX / UI</span>
+<span>Responsive</span>
+</div>
+<div class="project-actions">
+<a class="project-button project-button-gold" href="https://kgillio.github.io/ISG-Website-Update/isg-redesign/" rel="noopener" target="_blank">Case Study</a>
+<a class="project-button" href="https://github.com/Kgillio/ISG-Website-Update" rel="noopener" target="_blank">GitHub</a>
+</div>
+<div aria-label="ISG website transformation preview" class="project-image-placeholder">
+<img alt="ISG website transformation — collage of five redesigned site sections" src="assets/kg-web-designs/isg-redesign-collage.webp" loading="lazy" decoding="async" style="object-fit:contain;background:#f7f5f1"/>
 </div>
 </article>
 </div>
@@ -4709,7 +4929,7 @@
 <section class="pg-carousel-section">
 <div class="pg-carousel-header">
 <h2 class="pg-carousel-title">Recent Digital Work</h2>
-<div class="pg-carousel-rule"><span><a href="https://kgillio.github.io/Digital-Marketing-Flyers/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">See Collection</a></span></div>
+<div class="pg-carousel-rule"><span><a href="https://kgillio.github.io/Digital-Marketing-Flyers/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">click here to see collection</a></span></div>
 </div>
 <div class="pc-wrap">
 <div class="pc-track" id="pcTrack">
@@ -4927,142 +5147,97 @@
 </main>
 </div>
 <!-- ══ RECENT WEB DESIGNS — ISOLATED APPEND ══ -->
-<div id="recent-web-designs">
-<!-- ══ WEB DESIGNS SECTION ══ -->
-<section class="wd-section">
-<div class="wd-shell">
-<div class="wd-header">
-<div class="wd-kicker">
-<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l1.6 4.5L18 9l-4.4 1.5L12 15l-1.6-4.5L6 9l4.4-1.5L12 3z"></path></svg>
-          Latest Builds
-        </div>
-<h2 class="wd-title">Recent<br/>Web Designs</h2>
-<p class="wd-subtitle">Modern, responsive websites built for <span>performance, clarity,</span> and <span>results.</span></p>
-<a class="wd-view-all" href="https://github.com/Kgillio" target="_blank" rel="noopener">View More Projects</a>
+<a id="recent-web-designs" aria-hidden="true" style="display:none!important"></a>
+<main aria-labelledby="kgws-title" class="kg-webshowcase" id="web-designs">
+<div class="kgws-layout">
+<div class="kgws-intro">
+<div class="kgws-eyebrow">LATEST BUILDS</div>
+<h2 id="kgws-title">Recent<br/>Web<br/>Designs</h2>
+<p>Modern, responsive websites built for <em>performance, clarity,</em> and <em>results.</em></p>
+<button aria-controls="kgws-more" aria-expanded="false" class="kgws-cta" id="kgws-more-toggle" type="button">
+<span>VIEW MORE PROJECTS</span><span aria-hidden="true">→</span>
+</button>
 </div>
-<div class="wd-grid" id="wdGrid">
-<div class="wd-hex-row wd-hex-row--top">
-<div class="wd-card">
-<div class="wd-card-inner">
-<span class="wd-card-number">01</span>
-<div class="wd-video-wrap">
-<video controls="" loop="" muted="" playsinline="" preload="none" data-video-src="assets/2026/03/safco-new.mp4" style="background:linear-gradient(135deg,#23374f 0%,#0f1824 100%);"></video>
-
-
-<button type="button" class="kg-video-launch" aria-label="Play preview: Braces &amp; Invisalign Landing Page" title="Play preview: Braces &amp; Invisalign Landing Page"><span aria-hidden="true">▶</span></button>
+<div aria-label="Selected project designs" class="kgws-wall" id="kgws-wall">
+<div class="kgws-row">
+<button aria-label="Preview Soni and Snipes orthodontics landing page" class="kgws-tile" data-project="0" type="button">
+<img alt="Soni and Snipes Orthodontics landing page screenshot" loading="lazy" src="assets/kg-web-designs/soni-snipes.webp"/>
+<span class="kgws-tile-overlay"><span><span class="kgws-tile-name">Soni &amp; Snipes Orthodontics</span><span class="kgws-tile-type">LANDING PAGE</span></span><span class="kgws-tile-arrow">↗</span></span>
+</button>
+<button aria-label="Preview ISG membership page redesign" class="kgws-tile" data-project="1" type="button">
+<img alt="ISG membership page redesign screenshot" loading="lazy" src="assets/kg-web-designs/isg-membership.webp"/>
+<span class="kgws-tile-overlay"><span><span class="kgws-tile-name">ISG Membership Redesign</span><span class="kgws-tile-type">CORPORATE WEBSITE</span></span><span class="kgws-tile-arrow">↗</span></span>
+</button>
 </div>
-<div class="wd-card-body">
-<div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>Supplier Platform</div>
-<div class="wd-card-row"><div class="wd-card-title">Braces & Invisalign Landing Page</div></div>
+<div class="kgws-row">
+<button aria-label="Preview Oak Park Barber Salon website" class="kgws-tile" data-project="2" type="button">
+<img alt="Oak Park Barber Salon website screenshot" loading="lazy" src="assets/kg-web-designs/oak-park-barber.webp"/>
+<span class="kgws-tile-overlay"><span><span class="kgws-tile-name">Oak Park Barber Salon</span><span class="kgws-tile-type">BUSINESS WEBSITE</span></span><span class="kgws-tile-arrow">↗</span></span>
+</button>
+<button aria-label="Preview Endgame Gauntlet web app" class="kgws-tile" data-project="3" type="button">
+<img alt="Endgame Gauntlet web application screenshot" loading="lazy" src="assets/kg-web-designs/endgame-gauntlet.webp"/>
+<span class="kgws-tile-overlay"><span><span class="kgws-tile-name">Endgame Gauntlet</span><span class="kgws-tile-type">WEB APPLICATION</span></span><span class="kgws-tile-arrow">↗</span></span>
+</button>
 </div>
-</div>
-</div>
-<div class="wd-card">
-<div class="wd-card-inner">
-<span class="wd-card-number">02</span>
-<div class="wd-video-wrap">
-<video controls="" loop="" muted="" playsinline="" preload="none" data-video-src="assets/2026/03/rogers.mp4" style="background:linear-gradient(135deg,#10224b 0%,#0f162a 100%);"></video>
-
-
-<button type="button" class="kg-video-launch" aria-label="Play preview: Rogers Supplier Page Design" title="Play preview: Rogers Supplier Page Design"><span aria-hidden="true">▶</span></button>
-</div>
-<div class="wd-card-body">
-<div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>Supplier Platform</div>
-<div class="wd-card-row"><div class="wd-card-title">Rogers Supplier Page Design</div></div>
-</div>
+<div class="kgws-row">
+<button aria-label="Preview Rubbermaid facility solutions landing page" class="kgws-tile" data-project="4" type="button">
+<img alt="Rubbermaid facility solutions landing page screenshot" loading="lazy" src="assets/kg-web-designs/rubbermaid-facility.webp"/>
+<span class="kgws-tile-overlay"><span><span class="kgws-tile-name">Rubbermaid Facility Solutions</span><span class="kgws-tile-type">CAMPAIGN LANDING PAGE</span></span><span class="kgws-tile-arrow">↗</span></span>
+</button>
+<button aria-label="Preview Screenflex OFCS product gallery" class="kgws-tile" data-project="5" type="button">
+<img alt="Screenflex OFCS product gallery screenshot" loading="lazy" src="assets/kg-web-designs/ofcs-screenflex.webp"/>
+<span class="kgws-tile-overlay"><span><span class="kgws-tile-name">OFCS / Screenflex</span><span class="kgws-tile-type">PRODUCT GALLERY</span></span><span class="kgws-tile-arrow">↗</span></span>
+</button>
 </div>
 </div>
-<div class="wd-card">
-<div class="wd-card-inner">
-<span class="wd-card-number">03</span>
-<div class="wd-video-wrap">
-<video controls="" loop="" muted="" playsinline="" preload="none" data-video-src="assets/2026/03/ACME.mp4" style="background:linear-gradient(135deg,#24456d 0%,#0f1d31 100%);"></video>
-
-
-<button type="button" class="kg-video-launch" aria-label="Play preview: ACME Supplier Page Design" title="Play preview: ACME Supplier Page Design"><span aria-hidden="true">▶</span></button>
+<aside aria-labelledby="kgws-feature-title" class="kgws-feature">
+<div class="kgws-feature-header">
+<span class="kgws-feature-label">FEATURED PROJECT</span>
+<span class="kgws-feature-index">06 / 06</span>
 </div>
-<div class="wd-card-body">
-<div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>Supplier Platform</div>
-<div class="wd-card-row"><div class="wd-card-title">ACME Supplier Page Design</div></div>
+<div class="kgws-feature-preview">
+<img alt="Screenflex OFCS product gallery preview" loading="lazy" src="assets/kg-web-designs/ofcs-screenflex.webp"/>
 </div>
+<div class="kgws-feature-caption">INTERACTIVE PRODUCT SHOWCASE</div>
+<div class="kgws-feature-content">
+<div>
+<h3 id="kgws-feature-title">OFCS / Screenflex Product Gallery</h3>
+<p class="kgws-feature-desc">Dark editorial product gallery experience with immersive navigation and a premium product-focused layout.</p>
 </div>
+<button aria-label="Preview featured Screenflex product gallery" class="kgws-feature-action" data-project="5" type="button">↗</button>
 </div>
+<div class="kgws-feature-footer">
+<div><span class="kgws-meta-label">PROJECT</span><span class="kgws-meta-value">Screenflex OFCS</span></div>
+<div><span class="kgws-meta-label">SERVICES</span><span class="kgws-meta-value">Web Design  ·  Interactive Gallery<br/>Brand Presentation  ·  Development</span></div>
 </div>
-<div class="wd-hex-row wd-hex-row--bottom">
-<div class="wd-card">
-<div class="wd-card-inner">
-<span class="wd-card-number">04</span>
-<div class="wd-video-wrap">
-<video controls="" loop="" muted="" playsinline="" preload="none" data-video-src="assets/2026/03/tattoo.mp4" style="background:linear-gradient(135deg,#151515 0%,#090909 100%);"></video>
-
-
-<button type="button" class="kg-video-launch" aria-label="Play preview: InkLine E-Commerce Design" title="Play preview: InkLine E-Commerce Design"><span aria-hidden="true">▶</span></button>
+</aside>
 </div>
-<div class="wd-card-body">
-<div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>E-Commerce Design</div>
-<div class="wd-card-row"><div class="wd-card-title">InkLine E-Commerce Design</div></div>
-</div>
-</div>
-</div>
-<div class="wd-card">
-<div class="wd-card-inner">
-<span class="wd-card-number">05</span>
-<div class="wd-video-wrap">
-<video controls="" loop="" muted="" playsinline="" preload="none" data-video-src="assets/2026/03/newest-of-the-products.mp4" style="background:linear-gradient(135deg,#24456d 0%,#1a273d 100%);"></video>
-
-
-<button type="button" class="kg-video-launch" aria-label="Play preview: Workspace Landing Page" title="Play preview: Workspace Landing Page"><span aria-hidden="true">▶</span></button>
-</div>
-<div class="wd-card-body">
-<div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>Landing Page Design</div>
-<div class="wd-card-row"><div class="wd-card-title">Workspace Landing Page</div></div>
-</div>
-</div>
-</div>
-<div class="wd-card wd-card--burgundy">
-<div class="wd-card-inner">
-<span class="wd-card-number">06</span>
-<div class="wd-video-wrap">
-<video controls="" loop="" muted="" playsinline="" preload="none" data-video-src="assets/2026/03/scholastic.mp4" style="background:linear-gradient(135deg,#8f1e2a 0%,#3c1522 100%);"></video>
-
-
-<button type="button" class="kg-video-launch" aria-label="Play preview: Election Activity Web App" title="Play preview: Election Activity Web App"><span aria-hidden="true">▶</span></button>
-</div>
-<div class="wd-card-body">
-<div class="wd-card-kicker"><svg viewbox="0 0 24 24"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 4h8M8 12h8M8 16h4"></path></svg>Web Application Design</div>
-<div class="wd-card-row"><div class="wd-card-title">Election Activity Web App</div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- ══ SCREENFLEX FEATURED BUILD ══ -->
-<div class="wd-feature-column">
-  <div class="wd-showcase-title">Showcase</div>
-  <article class="wd-feature-card" aria-labelledby="screenflex-feature-title">
-    <div class="wd-feature-heading">
-      <span class="wd-feature-number">07</span>
-      <span class="wd-feature-label">Featured Build</span>
-    </div>
-    <div class="wd-feature-video">
-      <video controls="" muted="" playsinline="" preload="none" poster="assets/2026/03/screenflex-poster.jpg" aria-label="Screenflex interactive product gallery demonstration">
-        <source src="assets/2026/03/screenflex-web.mp4" type="video/mp4"/>
-        Your browser does not support HTML video.
-      </video>
-    </div>
-    <div class="wd-feature-copy">
-      <div class="wd-feature-kicker">Interactive Product Showcase</div>
-      <h3 id="screenflex-feature-title">Screenflex Product Gallery</h3>
-      <p>Responsive product exploration and visual merchandising experience.</p>
-    </div>
-  </article>
-</div>
-<!-- ══ END SCREENFLEX FEATURED BUILD ══ -->
-</div>
+<section aria-label="All web design projects" class="kgws-more" hidden="" id="kgws-more">
+<h3 class="kgws-more-heading">Explore the Projects</h3>
+<div class="kgws-more-grid" id="kgws-more-grid"></div>
 </section>
+<div class="kgws-modal" hidden="" id="kgws-modal">
+<div aria-describedby="kgws-modal-note" aria-labelledby="kgws-modal-title" aria-modal="true" class="kgws-dialog" role="dialog">
+<div class="kgws-modal-top">
+<div>
+<div class="kgws-modal-kicker" id="kgws-modal-category">PROJECT PREVIEW</div>
+<h3 class="kgws-modal-title" id="kgws-modal-title">Project title</h3>
 </div>
-<!-- ══ END RECENT WEB DESIGNS ══ -->
+<button aria-label="Close project preview" class="kgws-close" id="kgws-close" type="button">×</button>
+</div>
+<img alt="Selected web design preview" class="kgws-modal-image" id="kgws-modal-image"/>
+<div class="kgws-modal-bottom">
+<p class="kgws-modal-note" id="kgws-modal-note"></p>
+<div class="kgws-gallery-nav">
+<button aria-label="Previous project" id="kgws-prev" type="button">← Previous</button>
+<button aria-label="Next project" id="kgws-next" type="button">Next →</button>
+<a class="kgws-live-link" hidden="" href="#" id="kgws-live-link" rel="noopener noreferrer" target="_blank">Visit website ↗</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+
 <!-- ══ TECHNICAL SKILLS — ISOLATED APPEND ══ -->
 <div id="technical-skills">
 <section aria-labelledby="skills-title" class="skills-section">
@@ -6550,5 +6725,100 @@
   .project-card, .pc-card, .wd-card { transition-duration: 0.01ms !important; }
 }
 </style>
+<script id="kg-brick-wall-only-script">
+
+  (() => {
+    'use strict';
+    const projects = [
+      {name:'Soni & Snipes Orthodontics', category:'Landing Page', image:'assets/kg-web-designs/soni-snipes.webp', desc:'Consultation-focused orthodontic landing page with a strong hero, form-first layout, and a clean, conversion-oriented structure.', url:'https://sonisnipesortho.com/', linkLabel:'Visit practice website ↗'},
+      {name:'ISG Membership Redesign', category:'Corporate Website', image:'assets/kg-web-designs/isg-membership.webp', desc:'Corporate membership page redesign featuring a navigation mega-menu, member-focused messaging, and a high-impact nationwide support visual.', url:'https://kgillio.github.io/ISG-Website-Update/isg-redesign/', linkLabel:'View ISG redesign ↗'},
+      {name:'Oak Park Barber Salon', category:'Business Website', image:'assets/kg-web-designs/oak-park-barber.webp', desc:'Editorial barber website layout with a bold black-and-white hero, pricing section, and image-led service presentation.', url:'https://oakparkbarbersalon.com/', linkLabel:'Visit barber website ↗'},
+      {name:'Endgame Gauntlet', category:'Web Application', image:'assets/kg-web-designs/endgame-gauntlet.webp', desc:'Interactive chess training app interface with a game board, control panel, and bold visual identity.', url:'https://endgame-gauntlet.streamlit.app/', linkLabel:'Launch Endgame Gauntlet ↗'},
+      {name:'Rubbermaid Facility Solutions', category:'Campaign Landing Page', image:'assets/kg-web-designs/rubbermaid-facility.webp', desc:'Facility-solutions campaign landing page with a large product hero, request form, and B2B-focused conversion flow.', url:''},
+      {name:'OFCS / Screenflex Product Gallery', category:'Interactive Product Showcase', image:'assets/kg-web-designs/ofcs-screenflex.webp', desc:'Dark immersive product-gallery experience highlighting modular workspace products in a premium editorial layout.', url:'https://screenflexov-dsy2p2kxjkqvod3gleyfg4.streamlit.app/', linkLabel:'Launch Screenflex Gallery ↗'}
+    ];
+
+    const section=document.querySelector('.kg-webshowcase');
+    const modal=section.querySelector('#kgws-modal');
+    const image=section.querySelector('#kgws-modal-image');
+    const title=section.querySelector('#kgws-modal-title');
+    const category=section.querySelector('#kgws-modal-category');
+    const note=section.querySelector('#kgws-modal-note');
+    const liveLink=section.querySelector('#kgws-live-link');
+    const closeButton=section.querySelector('#kgws-close');
+    const toggle=section.querySelector('#kgws-more-toggle');
+    const more=section.querySelector('#kgws-more');
+    const moreGrid=section.querySelector('#kgws-more-grid');
+    let active=0;
+    let priorFocus=null;
+    let savedOverflow='';
+
+    projects.forEach((project,i) => {
+      const button=document.createElement('button');
+      button.type='button'; button.className='kgws-more-item'; button.dataset.project=String(i);
+      const label=document.createElement('span');
+      label.textContent=project.name;
+      const small=document.createElement('small');small.textContent=project.category;
+      label.appendChild(small);
+      const arrow=document.createElement('span'); arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';
+      button.append(label,arrow);moreGrid.appendChild(button);
+    });
+
+    function updateModal(index){
+      active=(index+projects.length)%projects.length;
+      const project=projects[active];
+      image.src=project.image;
+      image.alt=`Preview for ${project.name}`;
+      title.textContent=project.name;
+      category.textContent=project.category.toUpperCase();
+      note.textContent=project.desc;
+      if(project.url && /^https?:\/\//i.test(project.url)) {
+        liveLink.href=project.url;liveLink.textContent=project.linkLabel || 'Visit website ↗';liveLink.hidden=false;
+      } else {liveLink.hidden=true;liveLink.removeAttribute('href');}
+    }
+    function openProject(index){
+      priorFocus=document.activeElement;
+      updateModal(index);
+      modal.hidden=false;
+      savedOverflow=document.body.style.overflow;
+      document.body.style.overflow='hidden';
+      closeButton.focus();
+    }
+    function closeProject(){
+      if(modal.hidden) return;
+      modal.hidden=true;
+      document.body.style.overflow=savedOverflow;
+      if(priorFocus && typeof priorFocus.focus==='function') priorFocus.focus();
+    }
+    section.addEventListener('click',event=>{
+      const tile=event.target.closest('[data-project]');
+      if(tile && section.contains(tile)) openProject(Number(tile.dataset.project));
+    });
+    closeButton.addEventListener('click',closeProject);
+    modal.addEventListener('click',event=>{if(event.target===modal)closeProject();});
+    section.querySelector('#kgws-prev').addEventListener('click',()=>updateModal(active-1));
+    section.querySelector('#kgws-next').addEventListener('click',()=>updateModal(active+1));
+    document.addEventListener('keydown',event=>{
+      if(modal.hidden) return;
+      if(event.key==='Escape')closeProject();
+      if(event.key==='ArrowLeft')updateModal(active-1);
+      if(event.key==='ArrowRight')updateModal(active+1);
+      if(event.key==='Tab'){
+        const focusable=[...modal.querySelectorAll('button:not([disabled]),a[href]:not([hidden])')];
+        const first=focusable[0],last=focusable[focusable.length-1];
+        if(event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
+        else if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
+      }
+    });
+    toggle.addEventListener('click',()=>{
+      const opening=more.hidden;
+      more.hidden=!opening;
+      toggle.setAttribute('aria-expanded',String(opening));
+      toggle.querySelector('span:first-child').textContent=opening?'HIDE PROJECT LIST':'VIEW MORE PROJECTS';
+      if(opening)more.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'nearest'});
+    });
+  })();
+  
+</script>
 </body>
 </html>
